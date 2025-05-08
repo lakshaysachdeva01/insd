@@ -27,7 +27,7 @@ app.get('/', async (req, res) => {
     const testimonial = await gettestimonial();
     const blogs = await getBlog();
     const gallery= await getgallery();
-    
+    const clients = await getclientle();
     const popupbanners = await getHomepopupBanner();
    const latestImages = await getLatestGalleryImages();
    const seoDetails = {
@@ -40,7 +40,7 @@ app.get('/', async (req, res) => {
 
    
    
-    res.render('index', {body: "",baseUrl,latestImages, websiteID,popupbanners,testimonial,blogs,gallery, API_BASE_URL,WEBSITE_ID_KEY, seoDetails,banners});
+    res.render('index', {body: "",baseUrl,latestImages, websiteID,popupbanners,testimonial,blogs,gallery,clients, API_BASE_URL,WEBSITE_ID_KEY, seoDetails,banners});
 });
 
 

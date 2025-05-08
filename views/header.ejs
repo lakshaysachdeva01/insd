@@ -72,147 +72,85 @@
         <script src="/assets/js/uni-core/js/uni-core-bundle.min.js"></script>
     </head>
     <body class="uni-body panel bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 overflow-x-hidden disable-cursor">
-
-        
-
-        <!-- Header start -->
-        <header class="uc-header header-default uc-navbar-sticky-wrap z-999 " style="--uc-nav-height: 80px; background:#19182c" data-uc-sticky="start: 100vh; show-on-up: true; animation: uc-animation-slide-top; sel-target: .uc-navbar-container; cls-active: uc-navbar-sticky; cls-inactive: uc-navbar-transparent; end: !*;">
-            <nav class="uc-navbar-container  ft-tertiary z-1" data-anime="translateY: [-40, 0]; opacity: [0, 1]; easing: easeOutExpo; duration: 750; delay: 0;">
-                <div class="container max-w-xl">
-                    <div class="uc-navbar min-h-64px lg:min-h-80px  text-white"  data-uc-navbar="mode: click; animation: uc-animation-slide-top-small; duration: 150;">
-                        <div class="uc-navbar-left"  style="width: 90%;">
-                            <div class="uc-logo text-dark dark:text-white">
-                                <a class='panel text-none' href='/' style='width: 180px'>
-                                    <img class="dark:d-none" src="/assets/images/logo.png" alt="INSD logo">
-                                </a>
+        <style>
+            /* Initial navbar background color */
+            .uc-navbar-container {
+                background-color: #19182c ;
+                transition: background-color 0.3s ease;
+            }
+            
+            /* Sticky navbar styles: white background and black links */
+            .uc-navbar-sticky .uc-navbar-container {
+                background-color: #ffffff !important;
+            }
+            .uc-navbar-sticky .uc-navbar-nav li a {
+                color: #000000 !important;
+            }
+            .uc-navbar-sticky .btn-primary {
+                color: #ffffff !important; /* Maintain button text color */
+            }
+            
+            /* Smooth logo transition */
+            .uc-logo img {
+                transition: all 0.3s ease;
+            }
+            </style>
+            
+            <header class="uc-header header-default uc-navbar-sticky-wrap z-999" style="--uc-nav-height: 80px;" data-uc-sticky="start: 100vh; show-on-up: true; animation: uc-animation-slide-top; sel-target: .uc-navbar-container; cls-active: uc-navbar-sticky; cls-inactive: uc-navbar-transparent; end: !*;">
+                <nav class="uc-navbar-container ft-tertiary z-1" data-anime="translateY: [-40, 0]; opacity: [0, 1]; easing: easeOutExpo; duration: 750; delay: 0;">
+                    <div class="container max-w-xl">
+                        <div class="uc-navbar min-h-64px lg:min-h-80px text-white" data-uc-navbar="mode: click; animation: uc-animation-slide-top-small; duration: 150;">
+                            <div class="uc-navbar-left" style="width: 90%;">
+                                <div class="uc-logo text-dark dark:text-white">
+                                    <a class='panel text-none' href='/' style='width: 180px'>
+                                        <img class="dark:d-none logo-img" src="/assets/images/logo.png" alt="INSD logo" data-sticky-src="/assets/images/logo-red.png" data-default-src="/assets/images/logo.png">
+                                    </a>
+                                </div>
+                                
+                                <ul style="width: 80%; justify-content:center" class="uc-navbar-nav gap-3 xl:gap-4 d-none lg:d-flex fw-medium ms-2">
+                                    <li><a href='/about'>About</a></li>
+                                    <li><a href='/courses'>Courses</a></li>
+                                    <li><a href='/gallery'>Glimpses</a></li>
+                                    <li><a href='/blogs'>Insights</a></li>
+                                    <li><a href='/contact'>Contact</a></li>
+                                </ul>
                             </div>
-                            
-                            <ul style="width: 80%; justify-content:center" class="uc-navbar-nav gap-3 xl:gap-4 d-none lg:d-flex fw-medium ms-2">
-                                <li><a href='/about'>About</a></li>
-                                <li><a href='/courses'>Courses</a></li>
-                                <li><a href='/gallery'>Glimpses</a></li>
-                                <li><a href='/blogs'>Insights</a></li>
-                                <li><a href='/contact'>Contact</a></li>
-                                <!-- <li>
-                                    <a href="#">More <span data-uc-navbar-parent-icon></span></a>
-                                    <div class="uc-navbar-dropdown" data-uc-drop="mode: click; offset: 0; boundary: !.uc-navbar; stretch: x; animation: uc-animation-slide-top-small; duration: 150;">
-                                        <div class="uc-drop-grid row child-cols g-4" data-uc-grid>
-                                            <div>
-                                                <div class="uc-drop-grid row child-cols g-4" data-uc-grid>
-                                                    <div>
-                                                        <ul class="uc-nav uc-navbar-dropdown-nav">
-                                                            <li class="uc-nav-header">Main Pages</li>
-                                                            <li><a href='index.html'>Home 01</a></li>
-                                                            <li><a href='index-2.html'>Home 02</a></li>
-                                                            <li><a href='index-3.html'>Home 03</a></li>
-                                                            <li>
-                                                                <a href='index-4.html'>Home 04 <span class="fw-bold text-primary fs-8 ms-1 px-1 border rounded-pill">New</span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href='index-5.html'>Home 05 <span class="fw-bold text-primary fs-8 ms-1 px-1 border rounded-pill">New</span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href='index-6.html'>Home 06 <span class="fw-bold text-primary fs-8 ms-1 px-1 border rounded-pill">New</span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Home 07 <span class="fw-bold text-gray-400 fs-8 ms-1 px-1 border rounded-pill">Soon</span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Home 08 <span class="fw-bold text-gray-400 fs-8 ms-1 px-1 border rounded-pill">Soon</span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Home 09 <span class="fw-bold text-gray-400 fs-8 ms-1 px-1 border rounded-pill">Soon</span></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Home 10 <span class="fw-bold text-gray-400 fs-8 ms-1 px-1 border rounded-pill">Soon</span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <ul class="uc-nav uc-navbar-dropdown-nav">
-                                                            <li class="uc-nav-header">Inner Pages</li>
-                                                            <li><a href='page-features.html'>Features</a></li>
-                                                            <li><a href='page-pricing.html'>Pricing</a></li>
-                                                            <li><a href='page-integrations.html'>Integrations</a></li>
-                                                            <li><a href='page-about.html'>About</a></li>
-                                                            <li><a href='page-career.html'>Career</a></li>
-                                                            <li>
-                                                                <a href='page-team.html'>Team <span class="fw-bold text-primary fs-8 ms-1 px-1 border rounded-pill">New</span></a>
-                                                            </li>
-                                                            <li><a href='page-career-detail.html'>Job details</a></li>
-                                                            <li><a href='page-contact.html'>Contact</a></li>
-                                                            <li><a href='page-contact-2.html'>Contact v2</a></li>
-                                                            <li>
-                                                                <a href="#">Services <span class="fw-bold text-gray-400 fs-8 ms-1 px-1 border rounded-pill">Soon</span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <ul class="uc-nav uc-navbar-dropdown-nav">
-                                                            <li class="uc-nav-header">CMS Pages</li>
-                                                            <li><a href='blog.html'>Modern</a></li>
-                                                            <li><a href='blog-classic.html'>Classic</a></li>
-                                                            <li><a href='blog-2cols.html'>Grid 2 cols</a></li>
-                                                            <li><a href='blog-3cols.html'>Grid 3 cols</a></li>
-                                                            <li><a href='blog-4cols.html'>Grid 4 cols</a></li>
-                                                            <li><a href='blog-category.html'>Category</a></li>
-                                                            <li><a href='blog-author.html'>Author</a></li>
-                                                            <li><a href='blog-details.html'>Blog single</a></li>
-                                                            <li><a href='blog-details-2.html'>Blog single v2</a></li>
-                                                            <li><a href='blog-details-3.html'>Blog single v3</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <ul class="uc-nav uc-navbar-dropdown-nav">
-                                                            <li class="uc-nav-header">Shop Pages</li>
-                                                            <li><a href='shop.html'>Grid 4 cols</a></li>
-                                                            <li><a href='shop-3.html'>Grid 3 cols</a></li>
-                                                            <li><a href='shop-2.html'>Grid 2 cols</a></li>
-                                                            <li><a href='shop-product-detail.html'>Product detail</a></li>
-                                                            <li><a href='shop-product-detail-2.html'>Product detail v2</a></li>
-                                                            <li><a href='shop-cart.html'>Cart</a></li>
-                                                            <li><a href='shop-cart-2.html'>Cart v2</a></li>
-                                                            <li><a href='shop-checkout.html'>Checkout</a></li>
-                                                            <li><a href='shop-checkout-2.html'>Checkout v2</a></li>
-                                                            <li><a href='shop-order.html'>Order confirmation</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <ul class="uc-nav uc-navbar-dropdown-nav">
-                                                            <li class="uc-nav-header">Other pages</li>
-                                                            <li><a href='sign-in.html'>Sign in</a></li>
-                                                            <li><a href='sign-in-2.html'>Sign in v2</a></li>
-                                                            <li><a href='sign-up.html'>Sign up</a></li>
-                                                            <li><a href='sign-up-2.html'>Sign up v2</a></li>
-                                                            <li><a href='reset-password.html'>Reset password</a></li>
-                                                            <li><a href='reset-password-2.html'>Reset password v2</a></li>
-                                                            <li><a href='404.html'>404</a></li>
-                                                            <li><a href='coming-soon.html'>Coming Soon</a></li>
-                                                            <li><a href='page-terms.html'>Terms of service</a></li>
-                                                            <li><a href='page-privacy.html'>Privacy policy</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="panel w-100 overflow-hidden">
-                                                    <div class="ratio ratio-3x4 overflow-hidden rounded">
-                                                        <img src="../assets/images/template/menu-banner.jpg" alt="Let's build anything with Lexend!">
-                                                        <a class="position-cover" href="https://themeforest.net/item/lexend-software-saas-startup-html5-template/51596504" target="_blank"></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> -->
-                            </ul>
-                        </div>
-                        <div class="uc-navbar-right">
-                            
-                            <a class='btn btn-sm btn-primary text-white text-none d-none lg:d-inline-flex' style="font-family: 'graphik',sans-serif;" href='/admission'>Get started</a>
-                            
+                            <div class="uc-navbar-right">
+                                <a class='btn btn-sm btn-primary text-white text-none d-none lg:d-inline-flex' style="font-family: 'graphik',sans-serif;" href='/admission'>Get started</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+            </header>
+            
+            <script>
+            // JavaScript to toggle logo based on sticky state
+            document.addEventListener('DOMContentLoaded', function () {
+                const navbar = document.querySelector('.uc-navbar-container');
+                const logoImg = document.querySelector('.uc-logo .logo-img');
+                
+                if (navbar && logoImg) {
+                    const defaultSrc = logoImg.getAttribute('data-default-src');
+                    const stickySrc = logoImg.getAttribute('data-sticky-src');
+                    
+                    const observer = new MutationObserver(function (mutations) {
+                        mutations.forEach(function (mutation) {
+                            if (mutation.attributeName === 'class') {
+                                if (navbar.classList.contains('uc-navbar-sticky')) {
+                                    logoImg.src = stickySrc;
+                                } else {
+                                    logoImg.src = defaultSrc;
+                                }
+                            }
+                        });
+                    });
+                    
+                    observer.observe(navbar, { attributes: true });
+                    
+                    // Initial check in case navbar is sticky on load
+                    if (navbar.classList.contains('uc-navbar-sticky')) {
+                        logoImg.src = stickySrc;
+                    }
+                }
+            });
+            </script>

@@ -21,26 +21,6 @@
               <div class="panel vstack gap-4 md:gap-6 xl:gap-8 text-center">
                   <div class="panel vstack items-center max-w-400px sm:max-w-500px xl:max-w-md mx-auto gap-2 md:gap-3">
                       <h1 class="h4 sm:h2 lg:h1 xl:display-6"><%= blogfull.title %></h1>
-                      <ul class="post-share-icons nav-x gap-1 dark:text-white">
-                          <li>
-                              <a class="btn btn-md border-gray-900 border-opacity-15 w-32px lg:w-48px h-32px lg:h-48px text-dark dark:text-white dark:border-white hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-logo-facebook icon-1"></i></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-md border-gray-900 border-opacity-15 w-32px lg:w-48px h-32px lg:h-48px text-dark dark:text-white dark:border-white hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-logo-x-filled icon-1"></i></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-md border-gray-900 border-opacity-15 w-32px lg:w-48px h-32px lg:h-48px text-dark dark:text-white dark:border-white hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-logo-linkedin icon-1"></i></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-md border-gray-900 border-opacity-15 w-32px lg:w-48px h-32px lg:h-48px text-dark dark:text-white dark:border-white hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-logo-pinterest icon-1"></i></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-md border-gray-900 border-opacity-15 w-32px lg:w-48px h-32px lg:h-48px text-dark dark:text-white dark:border-white hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-email icon-1"></i></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-md border-gray-900 border-opacity-15 w-32px lg:w-48px h-32px lg:h-48px text-dark dark:text-white dark:border-white hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="fa-solid fa-link icon-1"></i></a>
-                          </li>
-                      </ul>
                   </div>
                   <figure class="featured-image m-0">
                       <figure class="featured-image m-0 rounded ratio ratio-2x1 rounded uc-transition-toggle overflow-hidden">
@@ -129,7 +109,8 @@
   /* Table styles */
 .blog-description p, .item-description p,.blog-description li ,.blog-description th,.item-description th  ,.item-description li{
   font-size: 18px;
-    line-height: 30px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.7);
 }
 .item-description td,.blog-description td  {
   font-size: 16px;
@@ -204,7 +185,9 @@
     max-width: 540px;
     min-width: 300px;
   }
-  
+  h1,h2,h3,h4,h5,h6,span,p,a,li,tr,td,th{
+    font-family: "graphik",sans-serif;
+  }
 </style>
             <div class="description-block">
              <% blogfull.multipleDescriptions.forEach(function(item) { %>
@@ -471,20 +454,81 @@
                   <ul class="post-share-icons nav-x gap-narrow">
                       <li class="me-1"><span class="text-black dark:text-white">Share:</span></li>
                       <li>
-                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-logo-facebook icon-1"></i></a>
+                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="https://www.facebook.com/sharer/sharer.php?u="><i class="fa-brands fa-facebook"></i></a>
                       </li>
                       <li>
-                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-logo-x-filled icon-1"></i></a>
+                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                       </li>
                       <li>
-                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="unicon-email icon-1"></i></a>
+                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="https://api.whatsapp.com/send?text=" target="_blank" id="whatsappShare"><i class="fa-brands fa-whatsapp"></i></a>
                       </li>
                       <li>
-                          <a class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" href="#"><i class="fa-solid fa-link icon-1"></i></a>
+                          <button onclick="copyToClipboard(event)" style="background: none;" class="btn btn-md btn-outline-gray-100 w-32px lg:w-40px h-32px lg:h-40px text-dark dark:text-white dark:border-gray-600 hover:bg-primary hover:border-primary hover:text-white rounded-circle" ><i class="fa-solid fa-link icon-1"></i></button>
                       </li>
                   </ul>
               </div>
-             
+              <!-- Custom Alert -->
+              <div id="customAlert" class="custom-alert">Link copied to clipboard!</div>
+                  
+              <style>
+                  .custom-alert {
+                      position: fixed;
+                      top: 150px;
+                      font-family: "graphik",sans-serif;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      background-color: #333;
+                      color: #fff;
+                      padding: 10px 20px;
+                      border-radius: 5px;
+                      font-size: 14px;
+                      opacity: 0;
+                      visibility: hidden;
+                      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+                  }
+                  .custom-alert.show {
+                      opacity: 1;
+                      visibility: visible;
+                  }
+                  .post-share-icons li i{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                                  }
+              </style>
+              
+            
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let blogUrl = encodeURIComponent(window.location.href);
+  document.getElementById("facebookShare").href += blogUrl;
+  document.getElementById("whatsappShare").href += blogUrl;
+});
+
+function copyToClipboard(event) {
+if (event) event.preventDefault(); // Prevents default behavior
+
+let blogUrl = window.location.href;
+
+// Create a temporary input field to enable copying on mobile
+let tempInput = document.createElement("input");
+tempInput.value = blogUrl;
+document.body.appendChild(tempInput);
+tempInput.select();
+document.execCommand("copy");
+document.body.removeChild(tempInput);
+
+showCustomAlert();
+}
+function showCustomAlert() {
+  let alertBox = document.getElementById("customAlert");
+  alertBox.classList.add("show");
+  setTimeout(() => {
+      alertBox.classList.remove("show");
+  }, 2000); // Hide alert after 2 seconds
+}
+</script>
+            
               <div class="post-related panel border-top pt-2">
                   <h4 class="h5 xl:h4 mb-5 xl:mb-6">Related topics:</h4>
                   <div class="row child-cols-6 md:child-cols-4 gx-2 gy-4 sm:gx-3 sm:gy-6">

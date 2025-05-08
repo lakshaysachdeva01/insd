@@ -1,0 +1,1085 @@
+<%- include('header'), {seoDetails} %>
+
+<div id="wrapper" class="wrap">
+    <%- include('partials/banners.ejs') %>
+    <!-- Section start -->
+    <div id="hero_header" class="hero-header section panel overflow-hidden">
+        <div class="position-absolute top-0 start-0 end-0 h-500px xl:h-screen" style="background-color: #19182c;"></div>
+        <div class="position-absolute top-0 start-0 end-0 min-h-screen overflow-hidden d-none lg:d-block uc-dark" data-anime="onview: -100; targets: img; scale: [0.8, 1]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 250; delay: anime.stagger(50, {start: 500});">
+            <div class="position-absolute top-0 start-0 rotate-45" style="top: 40% !important; left: 25% !important">
+                <img class="w-32px text-gray-900 dark:text-white" src="/assets/images/whitestar.svg" alt="star-1" data-uc-svg>
+            </div>
+            <div class="position-absolute top-0 end-0 rotate-45" style="top: 25% !important; right: 12% !important">
+                <img class="w-24px text-gray-900 dark:text-white" src="/assets/images/redstar.svg" alt="star-2" data-uc-svg>
+            </div>
+            <div class="position-absolute top-0 start-0 translate-middle-y -rotate-12" style="top: 20% !important; left: 12% !important">
+                <img class="w-56px xl:w-64px d-block dark:d-none" src="/assets/images/RulerPen.svg" alt="icon-trophy">
+                <img class="w-56px xl:w-64px d-none dark:d-block" src="/assets/images/RulerPen.svg" alt="icon-trophy-dark">
+            </div>
+            <div class="position-absolute top-0 start-0 translate-middle-y rotate-45 ms-n3" style="top: 35% !important">
+                <img class="w-56px xl:w-64px d-block dark:d-none" src="/assets/images/bedside.svg" alt="icon-location">
+                <img class="w-56px xl:w-64px d-none dark:d-block" src="/assets/images/bedside.svg" alt="icon-location-dark">
+            </div>
+            <div class="position-absolute top-0 start-0 translate-middle-y -rotate-12" style="top: 80% !important; left: 4% !important">
+                <img class="w-56px xl:w-64px d-block dark:d-none" src="/assets/images/Diploma.svg" alt="icon-globe">
+                <img class="w-56px xl:w-64px d-none dark:d-block" src="/assets/images/Diploma.svg" alt="icon-globe-dark">
+            </div>
+            <div class="position-absolute top-0 end-0 translate-middle-y rotate-12" style="top: 53% !important; right: 18% !important">
+                <img class="w-56px xl:w-64px d-block dark:d-none" src="/assets/images/cup.svg" alt="icon-crown">
+                <img class="w-56px xl:w-64px d-none dark:d-block" src="/assets/images/cup.svg" alt="icon-crown-dark">
+            </div>
+            <div class="position-absolute top-0 end-0 translate-middle-y -rotate-45" style="top: 80% !important; right: 8% !important">
+                <img class="w-56px xl:w-64px d-block dark:d-none" src="/assets/images/bedside.svg" alt="icon-diamond">
+                <img class="w-56px xl:w-64px d-none dark:d-block" src="/assets/images/bedside.svg" alt="icon-diamond-dark">
+            </div>
+            <div class="position-absolute top-0 end-0 translate-middle-y -rotate-12 me-n3" style="top: 35% !important">
+                <img class="w-56px xl:w-64px d-block dark:d-none" src="/assets/images/academic.svg" alt="icon-chat">
+                <img class="w-56px xl:w-64px d-none dark:d-block" src="/assets/images/academic.svg" alt="icon-chat-dark">
+            </div>
+        </div>
+        <div class="section-outer panel pb-6 sm:pb-9 pt-9 sm:pt-10">
+            <div style="
+    width: 100% !important;
+    padding-bottom: 22px;">
+                <div class="section-inner panel">
+                    <div class="vstack gap-6 sm:gap-8 xl:gap-9">
+                        <div class="panel text-center max-w-850px mx-auto uc-dark">
+                            <div class="vstack items-center gap-2 text-white" data-anime="targets: >*; translateY: [24, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                                <h1 style="font-weight:700" class="h2 sm:h1 lg:display-6 xl:display-4 mt-4 sm:mt-0">
+                                    Welcome to <span style="font-weight:700">INSD Raipur</span>  <br class="d-none sm:d-block">
+                                    Design your future today.
+                                </h1>
+                                <a class='btn btn-md lg:btn-lg btn-primary text-white min-w-150px sm:mt-1 lg:mt-2 ' style="font-family: 'graphik',sans-serif;" href='/courses'>Explore Courses</a>
+                                <div class="hstack justify-center gap-2 mt-1 sm:mt-2">
+                                    <div class="hstack justify-center gap-0">
+                                        <img class="w-40px rounded-circle ltr:ms-n2 rtl:me-n2 border border-2 border-gray-900" src="../assets/images/avatars/03.png" alt="Avatar image">
+                                        <img class="w-40px rounded-circle ltr:ms-n2 rtl:me-n2 border border-2 border-gray-900" src="../assets/images/avatars/02.png" alt="Avatar image">
+                                        <img class="w-40px rounded-circle ltr:ms-n2 rtl:me-n2 border border-2 border-gray-900" src="../assets/images/avatars/08.png" alt="Avatar image">
+                                    </div>
+                                    <span class="fs-7 sm:fs-6 fw-medium opacity-60 graphik">Hundreds are shaping design careers. <b><I>Are you next?</I></b> </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="panel" style="background: #19182c; width:100%; padding:20px" data-anime="translateY: [24, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: 200;">
+                            <figure style="max-height: 100vh;" class="featured-image m-0 rounded ratio ratio-16x9 lg:rounded-2 overflow-hidden">
+                              <iframe
+                                class="youtube-video"
+                                width="100%"
+                                height="100%"
+                                src=""
+                                data-src="https://www.youtube.com/embed/fWwNsCBW8_U?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&loop=1&playlist=fWwNsCBW8_U"
+                                title="INSD Raipur"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen
+                                loading="lazy"
+                                style="pointer-events: none; scale:1.19"
+                              ></iframe>
+                            </figure>
+                          </div>
+                           -->
+                           <div class="panel" style="background: #19182c; width:100%; padding:20px" 
+                           data-anime="translateY: [24, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: 200;">
+                        <figure style="max-height: 100vh;" 
+                                class="featured-image m-0 rounded ratio ratio-16x9 lg:rounded-2 overflow-hidden">
+                          <video
+                            class="local-video"
+                            width="100%"
+                            height="100%"
+                            muted
+                            loop
+                            playsinline
+                            preload="none"
+                            style="pointer-events: none; "
+                            data-src="/assets/images/video.mp4"
+                          >
+                            <source src="/assets/images/video.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </figure>
+                      </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll('.local-video');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        const src = video.getAttribute('data-src');
+        const sourceTag = video.querySelector('source');
+
+        if (entry.isIntersecting) {
+          if (!sourceTag.src) {
+            sourceTag.src = src;
+            video.load(); // Load after setting source
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
+
+    videos.forEach(video => {
+      observer.observe(video);
+    });
+  });
+</script>
+                      
+                          <script>
+                            const videoIframes = document.querySelectorAll('.youtube-video');
+                          
+                            const observer = new IntersectionObserver((entries) => {
+                              entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                  const iframe = entry.target;
+                                  const src = iframe.getAttribute('data-src');
+                                  if (src && !iframe.src) {
+                                    iframe.src = src;
+                                  }
+                                }
+                              });
+                            }, {
+                              threshold: 0.5
+                            });
+                          
+                            videoIframes.forEach(iframe => {
+                              iframe.dataset.src = iframe.getAttribute('data-src');
+                              iframe.removeAttribute('src');
+                              observer.observe(iframe);
+                            });
+                          </script>
+                          
+                                                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div id="main_features" class="main-features section panel overflow-hidden">
+        <div class="section-outer panel pb-6 xl:pb-9">
+            <div class="container max-w-xl lg:max-w-lg">
+                <div class="section-inner panel" data-anime="onview: -100; targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 100});">
+                    <div class="panel vstack items-center gap-2 xl:gap-3 mb-4 sm:mb-8 xl:mb-9 sm:max-w-600px xl:max-w-700px mx-auto text-center">
+                        <h2 class="h3 lg:h2 xl:h1 m-0">Smart features for your business</h2>
+                        <p class="fs-6 xl:fs-5 text-dark dark:text-white text-opacity-70">We focus on helping you to make useful content more accessible with an utlimate goal for a good sharing profit as a content creator.</p>
+                    </div>
+                    <div class="panel vstack gap-4 xl:gap-6">
+                        <div class="panel px-3 rounded-2 bg-secondary dark:bg-gray-800">
+                            <ul class="main-features-nav hstack text-center overflow-auto" data-uc-switcher="connect: .main-features-switcher; active: 1; animation: uc-animation-fade;">
+                                <li><a class="h6 lg:h5 text-nowrap m-0" href="#">Audit Trial</a></li>
+                                <li><a class="h6 lg:h5 text-nowrap m-0" href="#">Tool Workflow</a></li>
+                                <li><a class="h6 lg:h5 text-nowrap m-0" href="#">Control your Apps</a></li>
+                                <li><a class="h6 lg:h5 text-nowrap m-0" href="#">Approvals</a></li>
+                            </ul>
+                        </div>
+                        <div class="main-features-switcher uc-switcher overflow-hidden">
+                            <div>
+                                <div class="feature-item panel">
+                                    <div class="row child-cols col-match justify-between g-4">
+                                        <div class="col-12 sm:col-6">
+                                            <figure class="featured-image m-0 rounded ratio ratio-1x1 rounded-2 overflow-hidden">
+                                                <img class="media-cover image" src="../assets/images/template/feature-image-02.jpg" alt="Share tools quickly and confidently in minutes">
+                                            </figure>
+                                        </div>
+                                        <div class="col-12 sm:col-6">
+                                            <div class="panel">
+                                                <div class="panel vstack justify-center gap-4 h-100 sm:p-3 lg:p-4">
+                                                    <div>
+                                                        <div class="panel vstack gap-2">
+                                                            <h3 class="h4 sm:h3 lg:h2 m-0">Share tools quickly and confidently in minutes</h3>
+                                                            <p class="fs-6 lg:fs-5 opacity-70 dark:opacity-80">This powerfull tool eliminates the need to leave Salesforce to get things done as I can create a custom proposal with dynamic pricing tables. You can also customize your own dynamic versions.</p>
+                                                            <a href="#" class="uc-link fw-bold hstack gap-narrow mt-2 sm:mt-1 lg:mt-2">
+                                                                <span>Let's find out</span>
+                                                                <i class="position-relative icon icon-1 unicon-arrow-right rtl:rotate-180 translate-y-px"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="feature-item panel">
+                                    <div class="row child-cols col-match justify-between g-4">
+                                        <div class="col-12 sm:col-6">
+                                            <figure class="featured-image m-0 rounded ratio ratio-1x1 rounded-2 overflow-hidden">
+                                                <img class="media-cover image" src="../assets/images/template/feature-image-03.jpg" alt="Connect every part of your entire business">
+                                            </figure>
+                                        </div>
+                                        <div class="col-12 sm:col-6">
+                                            <div class="panel">
+                                                <div class="panel vstack justify-center gap-4 h-100 sm:p-3 lg:p-4">
+                                                    <div>
+                                                        <div class="panel vstack gap-2">
+                                                            <h3 class="h4 sm:h3 lg:h2 m-0">Connect every part of your entire business</h3>
+                                                            <p class="fs-6 lg:fs-5 opacity-70 dark:opacity-80">Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.</p>
+                                                            <a href="#" class="uc-link fw-bold hstack gap-narrow mt-2 sm:mt-1 lg:mt-2">
+                                                                <span>See all integrations</span>
+                                                                <i class="position-relative icon icon-1 unicon-arrow-right rtl:rotate-180 translate-y-px"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="feature-item panel">
+                                    <div class="row child-cols col-match justify-between g-4">
+                                        <div class="col-12 sm:col-6">
+                                            <figure class="featured-image m-0 rounded ratio ratio-1x1 rounded-2 overflow-hidden">
+                                                <img class="media-cover image" src="../assets/images/template/feature-image-01.jpg" alt="Maintain compliance and control your apps">
+                                            </figure>
+                                        </div>
+                                        <div class="col-12 sm:col-6">
+                                            <div class="panel">
+                                                <div class="panel vstack justify-center gap-4 h-100 sm:p-3 lg:p-4">
+                                                    <div>
+                                                        <div class="panel vstack gap-2">
+                                                            <h3 class="h4 sm:h3 lg:h2 m-0">Maintain compliance and control your apps</h3>
+                                                            <p class="fs-6 lg:fs-5 opacity-70 dark:opacity-80">Improve security and trust with built-in legally binding e-Signatures. Create pre-approved templates, content blocks and lock all legal information to prevent costly mistakes.</p>
+                                                            <a href="#" class="uc-link fw-bold hstack gap-narrow mt-2 sm:mt-1 lg:mt-2">
+                                                                <span>Let's find out</span>
+                                                                <i class="position-relative icon icon-1 unicon-arrow-right rtl:rotate-180 translate-y-px"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="feature-item panel">
+                                    <div class="row child-cols col-match justify-between g-4">
+                                        <div class="col-12 sm:col-6">
+                                            <figure class="featured-image m-0 rounded ratio ratio-1x1 rounded-2 overflow-hidden">
+                                                <img class="media-cover image" src="../assets/images/template/feature-image-04.jpg" alt="Review quickly and confidently">
+                                            </figure>
+                                        </div>
+                                        <div class="col-12 sm:col-6">
+                                            <div class="panel">
+                                                <div class="panel vstack justify-center gap-4 h-100 sm:p-3 lg:p-4">
+                                                    <div>
+                                                        <div class="panel vstack gap-2">
+                                                            <h3 class="h4 sm:h3 lg:h2 m-0">Review quickly and confidently</h3>
+                                                            <p class="fs-6 lg:fs-5 opacity-70 dark:opacity-80">Get real-time access to approvals, comments and version tracking. Smart features like variables and conditional logic help you eliminate Tool errors.</p>
+                                                            <a href="#" class="uc-link fw-bold hstack gap-narrow mt-2 sm:mt-1 lg:mt-2">
+                                                                <span>Let's find out</span>
+                                                                <i class="position-relative icon icon-1 unicon-arrow-right rtl:rotate-180 translate-y-px"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div id="integrations" class="integrations section panel overflow-hidden" style="margin-bottom: 80px;">
+        <div class="section-outer panel py-6 xl:py-9 bg-secondary dark:bg-primary dark:text-white">
+            <div class="container max-w-lg">
+                <div class="section-inner panel ">
+                    <div class="panel vstack items-center gap-4 sm:gap-6 xl:gap-8" data-anime="onview: -100; targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 100});">
+                        <div class="panel vstack items-center gap-2 xl:gap-3 text-center">
+                            <h2 class="h3 lg:h2 xl:h1 m-0">Explore Our Courses </h2>
+                            <p class="fs-6 xl:fs-5 text-dark dark:text-white text-opacity-70">
+                                Choose from Bachelor's, Master's, Diplomas & Advanced Diplomas in Design & Media</p>
+                        </div>
+                        <div class="row child-cols-12  sm:child-cols-6 lg:child-cols-4 col-match g-2 lg:g-4 " data-anime="onview: -100; targets: > *; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                            <div class="coursecards">
+                                <div class="panel courseoutline vstack justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Interior Designing</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Design Spaces</span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/interior.png" alt="Slack">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">
+                                            Turn empty rooms into inspiring environments. Learn how to blend function and style for homes, offices, and commercial spaces.</p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Fashion Designing</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Create Trends</span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/fashion.png" alt="Salesforce">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">
+                                            Bring your creativity to the runway. Learn the art of garment design, fashion styling, and trend forecasting to shape the future of style.
+                                            </p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Graphic Designing</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Build Brands
+                                                </span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/graphic.png" alt="Stripe">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">Transform ideas into stunning visuals. Master the tools and techniques to craft logos, ads, and digital media that define brand identities.
+                                        </p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Photography</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Capture Stories</span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/photography.png" alt="PayPal">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">Tell powerful stories through your lens. Explore lighting, composition, and editing to become a visual storyteller in any niche.
+                                        </p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Event Management</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Plan Events
+                                                </span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/event.png" alt="HubSpot">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">From weddings to corporate shows, learn to organize unforgettable experiences. Develop leadership, planning, and execution skills.
+                                        </p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">UI/UX</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Design Interfaces
+                                                </span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/ui.png" alt="Zapier">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">Shape how people interact with technology. Learn to create seamless, user-friendly digital products that people love to use.
+                                        </p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Digital Marketing</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Promote Brands</span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/digital.png" alt="Zapier">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">Learn to grow businesses online through SEO, social media, and ads. Master digital tools to launch a career in marketing and analytics.
+                                        </p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Animation Designing</h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Bring Ideas Alive
+                                                </span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/animation.png" alt="HubSpot">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">Create motion graphics, 2D/3D animations, and visual effects. Turn imagination into moving stories across film, games, and media.</p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="coursecards">
+                                <div class="panel vstack courseoutline justify-between gap-4 p-3 rounded lg:rounded-2 bg-white text-dark">
+                                    <div class="vstack gap-3">
+                                        <div class="hstack justify-between items-center">
+                                            <div class="vstack">
+                                                <h5 class="h5 m-0 text-dark">Need Help?
+                                                </h5>
+                                                <span class="fs-7 opacity-70 dark:opacity-80">Career Guidance
+                                                </span>
+                                            </div>
+                                            <img class="w-32px lg:w-40px" src="/assets/images/help.png" alt="HubSpot">
+                                        </div>
+                                        <p class="fs-6 opacity-70 dark:opacity-80">Confused about which path to take? Click here — let us help you choose the right course, career, and opportunities ahead.</p>
+                                    </div>
+                                    <a class='uc-link fw-bold fs-7 d-inline-flex items-center gap-narrow' href='page-integrations.html'>
+                                        <span>Explore</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class='uc-link fw-bold d-inline-flex items-center gap-narrow dark:text-white' href='page-integrations.html'>
+                            <span>Explore all integrations</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div hidden id="about_values" class="about-values section panel overflow-hidden">
+        <div class="section-outer panel py-6 xl:py-9 bg-secondary dark:bg-gray-800">
+            <div class="container max-w-lg">
+                <div class="section-inner panel">
+                    <div class="panel vstack gap-4 lg:gap-6 xl:gap-8">
+                        <h2 class="h4 sm:h2 m-0 text-center" data-anime="onview: -100; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: 100;">Our Values it’s Simple!</h2>
+                        <div class="panel vstack g-2 lg:gap-4" data-anime="onview: -100; targets: > *; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                            <div class="panel">
+                                <div class="row child-cols-12 sm:child-cols-6 lg:child-cols-4 col-match g-2 lg:g-4 justify-between text-center">
+                                    <div>
+                                        <div class="panel vstack items-center gap-2 p-4 lg:py-6 rounded-2 bg-white dark:bg-gray-800">
+                                            <img class="w-64px lg:w-80px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/icon-diamond.svg" alt="impact-icon">
+                                            <img class="w-64px lg:w-80px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/icon-diamond-dark.svg" alt="impact-icon">
+                                            <h5 class="h5 lg:h4">Make an impact</h5>
+                                            <p class="fs-6 opacity-70 dark:opacity-80">We’re building something big. Something that has the power to change the trajectory of any sized business for the better.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="panel vstack items-center gap-2 p-4 lg:py-6 rounded-2 bg-white dark:bg-gray-800">
+                                            <img class="w-64px lg:w-80px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/icon-trophy.svg" alt="crown-icon">
+                                            <img class="w-64px lg:w-80px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/icon-trophy-dark.svg" alt="crown-icon">
+                                            <h5 class="h5 lg:h4">Learn</h5>
+                                            <p class="fs-6 opacity-70 dark:opacity-80">Teams are masters of their craft though we’re all experts in our respective fields, we always make time to expand our minds.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="panel vstack items-center gap-2 p-4 lg:py-6 rounded-2 bg-white dark:bg-gray-800">
+                                            <img class="w-64px lg:w-80px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/icon-crown.svg" alt="empathy-icon">
+                                            <img class="w-64px lg:w-80px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/icon-crown-dark.svg" alt="empathy-icon">
+                                            <h5 class="h5 lg:h4">Empathy</h5>
+                                            <p class="fs-6 opacity-70 dark:opacity-80">We strive to be empathetic to every customer and colleague and by doing so we provide better experience for all.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel p-5 lg:py-9 rounded-2 bg-white dark:bg-gray-800">
+                                <div class="row child-cols-6 lg:child-cols-3 col-match g-4 text-center">
+                                    <div>
+                                        <div class="panel vstack gap-1">
+                                            <h4 class="h2 xl:display-5 m-0"><span data-anime="onview: -100; textContent: 2014; round: 1; easing: linear; duration: 1200;">0</span></h4>
+                                            <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">Lexend founded</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="panel vstack gap-1">
+                                            <h4 class="h2 xl:display-5 m-0"><span data-anime="onview: -100; textContent: [0, 50]; round: 1; easing: linear; duration: 1200;">0</span></h4>
+                                            <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">Hardworking group</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="panel vstack gap-1">
+                                            <h4 class="h2 xl:display-5 m-0"><span data-anime="onview: -100; textContent: [0, 4600]; round: 1; easing: linear; duration: 1200;">0</span></h4>
+                                            <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">Document workflows</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="panel vstack gap-1">
+                                            <h4 class="h2 xl:display-5 m-0"><span data-anime="onview: -100; textContent: [0, 17]; round: 1; easing: linear; duration: 1200;">0</span>%</h4>
+                                            <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">Taux convertion</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+    <%- include('./partials/testimonial.ejs') %>
+    <!-- Section start -->
+    <div id="pricing_tiers" class="pricing-tiers section panel overflow-hidden">
+        <div class="section-outer panel py-6 xl:py-9">
+            <div class="container max-w-lg">
+                <div class="section-inner panel">
+                    <div class="panel vstack items-center gap-4 sm:gap-6 xl:gap-8" data-anime="onview: -100; targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                        <div class="heading panel vstack items-center gap-2 xl:gap-3 text-center">
+                            <h2 class="title h3 lg:h2 xl:h1 m-0">Price plans as per your needs</h2>
+                            <p class="fs-6 xl:fs-5 text-dark dark:text-white text-opacity-70">No extra charges. No hidden fees.</p>
+                        </div>
+                        <div class="panel w-100 lg:max-w-900px border rounded-3 overflow-hidden">
+                            <div class="row child-cols-12 sm:child-cols-6 col-match justify-between g-0">
+                                <div>
+                                    <div class="tier panel vstack gap-2 xl:gap-4 px-3 py-4 sm:p-4 lg:p-6 rounded-0">
+                                        <div class="panel">
+                                            <h3 class="title h5 sm:h4 dark:text-white">Essentials</h3>
+                                            <p class="desc dark:text-whiteopacity-70 dark:opacity-80">For creating impressive tools that generate results.</p>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel vstack gap-narrow">
+                                                <h5 class="title h3 sm:h2 m-0 dark:text-white">$19 USD</h5>
+                                                <span class="fs-7 opacity-70">Seat per month, 2 seats max</span>
+                                                <div class="vstack gap-1 justify-center text-center mt-3">
+                                                    <a class='btn btn-md sm:btn-sm lg:btn-md btn-primary text-white' href='sign-up.html'>Start a free trial</a>
+                                                    <span class="fs-7 opacity-70 min-h-24px">No credit card required</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel vstack gap-2">
+                                                <span class="fs-6 fw-bold dark:text-white">Key features:</span>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Real-time tracking and notifications</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Real-time analytics</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Drag and drop templates</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Project Management</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>24/7 email and chat support</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="tier panel vstack gap-2 xl:gap-4 px-3 py-4 sm:p-4 lg:p-6 rounded-0 bg-secondary dark:bg-gray-800">
+                                        <span class="position-absolute top-0 ltr:end-0 rtl:start-0 m-2 d-inline-flex py-narrow px-1 bg-primary rounded-1 text-white fs-7 fw-medium">Popular</span>
+                                        <div class="panel">
+                                            <h3 class="title h5 sm:h4 dark:text-white">Business</h3>
+                                            <p class="desc dark:text-whiteopacity-70 dark:opacity-80">For seamless integrations and sending tools in bulk.</p>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel vstack gap-narrow">
+                                                <h5 class="title h3 sm:h2 m-0 dark:text-white">$49 USD</h5>
+                                                <span class="fs-7 opacity-70">Seat cost per month</span>
+                                                <div class="vstack gap-1 justify-center text-center mt-3">
+                                                    <a class='btn btn-md sm:btn-sm lg:btn-md btn-primary text-white' href='sign-up.html'>Start a free trial</a>
+                                                    <span class="fs-7 opacity-70 min-h-24px">No credit card required</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel vstack gap-2">
+                                                <span class="fs-6 fw-bold dark:text-white">Everything in Essentials, plus:</span>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>CRM and Zapier integrations</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>CContent reporting</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Unlimited team workspaces</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Approval workflows</span>
+                                                </div>
+                                                <div class="hstack gap-1 fs-7">
+                                                    <i class="cstack w-16px h-16px bg-primary text-white rounded-circle unicon-checkmark fw-bold"></i>
+                                                    <span>Salesforce integration*</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="position-absolute bottom-0 ltr:end-0 rtl:start-0 m-2 d-none md:d-block">
+                                            <img class="w-100px lg:w-128px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/money.svg" alt="money">
+                                            <img class="w-100px lg:w-128px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/money-dark.svg" alt="money-dark">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class='uc-link fw-bold d-inline-flex items-center gap-narrow' href='page-pricing.html'>
+                            <span>More detailed pricing</span>
+                            <i class="icon icon-1 unicon-arrow-right rtl:rotate-180"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div id="clients_feedbacks" class="clients-feedbacks section panel overflow-hidden">
+        <div class="section-outer panel pb-6 xl:pb-9">
+            <div class="container max-w-lg">
+                <div class="section-inner panel">
+                    <div class="panel vstack justify-center items-center gap-4 sm:gap-6 xl:gap-8" data-anime="onview: -100; targets: > *; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                        <h2 class="h4 sm:h3 lg:h2 m-0 text-center">Don’t just take our words</h2>
+                        <div class="row child-cols-12 sm:child-cols-6 col-match g-2 lg:g-3" data-uc-grid>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-07.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“We’re looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/01.png" alt="Mark Zellers">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Mark Zellers</h6>
+                                            <span class="fs-7 opacity-70">CEO, Co-Founder.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-06.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“This powerfull tool eliminates the need to leave Salesforce to get things done as I can create a custom proposal with dynamic pricing tables, and get approval from my boss all within 36 minutes.”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/04.png" alt="Natalia Larsson">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Natalia Larsson</h6>
+                                            <span class="fs-7 opacity-70">Director of Sales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-08.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“We are based in Europe and the latest Data Protection Regulation forces us to look for service suppliers than comply with this regulation and as we look to create our website and this builder just outstanding!”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/03.png" alt="Sarah Edrissi">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Sarah Edrissi</h6>
+                                            <span class="fs-7 opacity-70">Lead Marketing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-01.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“We’re looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/08.png" alt="Anna Yon">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Anna Yon</h6>
+                                            <span class="fs-7 opacity-70">Senior UI/UX Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-02.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“We’re looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/01.png" alt="Mark Zellers">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Mark Zellers</h6>
+                                            <span class="fs-7 opacity-70">CEO, Co-Founder.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-03.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“This powerfull tool eliminates the need to leave Salesforce to get things done as I can create a custom proposal with dynamic pricing tables, and get approval from my boss all within 36 minutes.”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/04.png" alt="Natalia Larsson">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Natalia Larsson</h6>
+                                            <span class="fs-7 opacity-70">Director of Sales</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-04.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“We are based in Europe and the latest Data Protection Regulation forces us to look for service suppliers than comply with this regulation and as we look to create our website and this builder just outstanding!”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/03.png" alt="Sarah Edrissi">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Sarah Edrissi</h6>
+                                            <span class="fs-7 opacity-70">Lead Marketing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="px-3 sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border">
+                                    <div class="panel vstack items-start gap-2">
+                                        <div class="panel">
+                                            <div class="hstack h-48px">
+                                                <img class="w-128px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/brands/brand-05.svg" alt="Brand" data-uc-svg>
+                                            </div>
+                                        </div>
+                                        <p class="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">“We’re looking for people who share our vision! most of our time used to be taken up by most of alternate administrative work whereas now we can focus on building out to help our employees.”</p>
+                                    </div>
+                                    <div class="panel hstack gap-2 mt-2 lg:mt-4">
+                                        <img class="w-40px rounded-circle" src="../assets/images/avatars/08.png" alt="Anna Yon">
+                                        <div class="panel vstack items-start gap-0">
+                                            <h6 class="h6 m-0">Anna Yon</h6>
+                                            <span class="fs-7 opacity-70">Senior UI/UX Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="uc-link fw-bold d-inline-flex items-center gap-narrow">
+                            <span>See all feedbacks</span>
+                            <i class="icon icon-1 unicon-arrow-right rtl:rotate-180"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div id="about-timeline" class="about-timeline section panel overflow-hidden bg-secondary dark:bg-gray-800">
+        <div class="section-outer panel py-6 xl:py-9">
+            <div class="container max-w-lg">
+                <div class="section-inner panel">
+                    <div class="panel vstack justify-center items-center gap-4 sm:gap-6 xl:gap-8">
+                        <h2 class="h4 sm:h3 lg:h2 m-0 text-center" data-anime="onview: -100; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: 100;">How we got here</h2>
+                        <div class="panel w-100 swiper-parent">
+                            <div class="swiper-timeline swiper swiper-container overflow-unset" data-uc-swiper="items: 1; gap: 0; dots: .swiper-pagination; disable-class: d-none; center: true; center-bounding: true;" data-uc-swiper-s="items: 2;" data-uc-swiper-m="items: 3;">
+                                <div class="swiper-wrapper" data-anime="onview: -100; targets: > *; translateX: [100, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                                    <div class="swiper-slide panel">
+                                        <div class="timeline-box panel vstack items-center gap-9 text-center">
+                                            <div class="image-wrap panel overflow-hidden w-200px">
+                                                <img class="image w-100 origin-bottom" src="../assets/images/template/timeline-01.png" alt="Where the idea come up of Lexend :)">
+                                            </div>
+                                            <div class="content panel vstack items-center px-3 xl:px-6">
+                                                <h3 class="title h4 sm:h3 dark:text-white">2014</h3>
+                                                <p class="desc fs-6 xl:fs-5 opacity-70 dark:text-white">Where the idea come up of Lexend :)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide panel">
+                                        <div class="timeline-box panel vstack items-center gap-9 text-center">
+                                            <div class="image-wrap panel overflow-hidden w-200px">
+                                                <img class="image w-100 origin-bottom" src="../assets/images/template/timeline-02.png" alt="Launched our first business that can be created in minutes, build meaningful relationships.">
+                                            </div>
+                                            <div class="content panel vstack items-center px-3 xl:px-6">
+                                                <h3 class="title h4 sm:h3 dark:text-white">2015</h3>
+                                                <p class="desc fs-6 xl:fs-5 opacity-70 dark:text-white">Launched our first business that can be created in minutes, build meaningful relationships.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide panel">
+                                        <div class="timeline-box panel vstack items-center gap-9 text-center">
+                                            <div class="image-wrap panel overflow-hidden w-200px">
+                                                <img class="image w-100 origin-bottom" src="../assets/images/template/timeline-03.png" alt="Opened our new office in Toronto, CA">
+                                            </div>
+                                            <div class="content panel vstack items-center px-3 xl:px-6">
+                                                <h3 class="title h4 sm:h3 dark:text-white">2016</h3>
+                                                <p class="desc fs-6 xl:fs-5 opacity-70 dark:text-white">Opened our new office in Toronto, CA</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide panel">
+                                        <div class="timeline-box panel vstack items-center gap-9 text-center">
+                                            <div class="image-wrap panel overflow-hidden w-200px">
+                                                <img class="image w-100 origin-bottom" src="../assets/images/template/timeline-04.png" alt="Moved to Silicon Valley whereas now we can focus on building out to help our employees.">
+                                            </div>
+                                            <div class="content panel vstack items-center px-3 xl:px-6">
+                                                <h3 class="title h4 sm:h3 dark:text-white">2019</h3>
+                                                <p class="desc fs-6 xl:fs-5 opacity-70 dark:text-white">Moved to Silicon Valley whereas now we can focus on building out to help our employees.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide panel">
+                                        <div class="timeline-box panel vstack items-center gap-9 text-center">
+                                            <div class="image-wrap panel overflow-hidden w-200px">
+                                                <img class="image w-100 origin-bottom" src="../assets/images/template/timeline-05.png" alt="Opened a new office in London, UK.">
+                                            </div>
+                                            <div class="content panel vstack items-center px-3 xl:px-6">
+                                                <h3 class="title h4 sm:h3 dark:text-white">2020</h3>
+                                                <p class="desc fs-6 xl:fs-5 opacity-70 dark:text-white">Opened a new office in London, UK.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide panel">
+                                        <div class="timeline-box panel vstack items-center gap-9 text-center">
+                                            <div class="image-wrap panel overflow-hidden w-200px">
+                                                <img class="image w-100 origin-bottom" src="../assets/images/template/timeline-06.png" alt="Top-rated software solution for service suppliers.">
+                                            </div>
+                                            <div class="content panel vstack items-center px-3 xl:px-6">
+                                                <h3 class="title h4 sm:h3 dark:text-white">Today</h3>
+                                                <p class="desc fs-6 xl:fs-5 opacity-70 dark:text-white">Top-rated software solution for service suppliers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div id="about-team" class="about-team section panel overflow-hidden">
+        <div class="section-outer panel py-6 xl:py-9">
+            <div class="container max-w-lg">
+                <div class="section-inner panel">
+                    <div class="panel vstack justify-center items-center gap-4 sm:gap-6 xl:gap-8" data-anime="onview: -100; targets: > *; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                        <h2 class="h4 sm:h3 lg:h2 m-0 text-center">Our Executive Team</h2>
+                        <div class="row child-cols-6 sm:child-cols-4 lg:child-cols-3 col-match gx-2 lg:gx-4 gy-4 lg:gy-6" data-anime="onview: -100; targets: > *; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});" data-uc-grid>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-01.jpg" alt="Mark Zellers">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">Mark Zellers</h6>
+                                        <span class="fs-7 opacity-70">Founder & CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-02.jpg" alt="John Zellers">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">John Zellers</h6>
+                                        <span class="fs-7 opacity-70">Co-Founder</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-03.jpg" alt="Kim Yun Son">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">Kim Yun Son</h6>
+                                        <span class="fs-7 opacity-70">Engineering Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-04.jpg" alt="André Garcia">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">André Garcia</h6>
+                                        <span class="fs-7 opacity-70">Product Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-05.jpg" alt="Peter Lary">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">Peter Lary</h6>
+                                        <span class="fs-7 opacity-70">UX Researcher</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-06.jpg" alt="Henry Matt">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">Henry Matt</h6>
+                                        <span class="fs-7 opacity-70">Customer Success</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-07.jpg" alt="Natalia">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">Natalia</h6>
+                                        <span class="fs-7 opacity-70">Lead of fun</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="panel vstack gap-2">
+                                    <img class="w-100 rounded" src="../assets/images/template/team-08.jpg" alt="Larry">
+                                    <div class="panel vstack items-start gap-0">
+                                        <h6 class="h6 m-0">Larry</h6>
+                                        <span class="fs-7 opacity-70">Director of Joy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class='uc-link fw-bold d-inline-flex items-center gap-narrow' href='page-about.html'>
+                            <span>More about us</span>
+                            <i class="icon icon-1 unicon-arrow-right rtl:rotate-180"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+
+    <!-- Section start -->
+    <div id="cta" class="cta section panel overflow-hidden">
+        <div class="section-outer panel" data-anime="onview: -100; translateY: [24, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: 200;">
+            <div class="container max-w-xl">
+                <div class="section-inner panel overflow-hidden rounded xl:rounded-2 px-2 sm:px-0 py-4 sm:py-6 xl:py-9 bg-secondary dark:bg-gray-800">
+                    <div class="d-none lg:d-block" data-anime="targets: >*; scale: [0, 1]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 750});">
+                        <div class="position-absolute top-0 start-0 rotate-45" style="top: 40% !important; left: 20% !important">
+                            <img class="w-24px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/template/star-1.svg" alt="star-1" data-uc-svg>
+                        </div>
+                        <div class="position-absolute bottom-0 ltr:end-0 rtl:start-0 rotate-45" style="bottom: 40% !important; right: 20% !important">
+                            <img class="w-24px text-gray-900 dark:text-white" src="https://unistudio.co/html/lexend/assets/images/template/star-2.svg" alt="star-2" data-uc-svg>
+                        </div>
+                    </div>
+                    <div class="d-none lg:d-block" data-anime="onview: -100; targets: img; scale: [0.8, 1]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: 350;">
+                        <div class="position-absolute top-50 start-0 translate-middle-y ms-n6">
+                            <img class="w-200px xl:w-250px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/talking.svg" alt="talking">
+                            <img class="w-200px xl:w-250px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/talking-dark.svg" alt="talking-dark">
+                        </div>
+                        <div class="position-absolute top-50 end-0 translate-middle-y me-n6">
+                            <img class="w-200px xl:w-250px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/chatting.svg" alt="chatting">
+                            <img class="w-200px xl:w-250px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/chatting-dark.svg" alt="chatting-dark">
+                        </div>
+                    </div>
+                    <div class="vstack items-center gap-2 max-w-400px lg:max-w-600px mx-auto text-center" data-anime="onview:-100; targets: >*; translateY: [48, 0]; opacity: [0, 1]; easing: spring(1, 80, 10, 0); duration: 450; delay: anime.stagger(100, {start: 200});">
+                        <h2 class="h3 sm:h1 xl:display-6 m-0">Prevent costly mistakes</h2>
+                        <p class="fs-6 sm:fs-5 text-dark dark:text-white text-opacity-70">Create pre-approved templates and lock all legal information.</p>
+                        <a class='btn btn-md h-48px lg:h-56px min-w-150px btn-primary text-white mt-2' href='page-pricing.html'>
+                            <span>Try it now</span>
+                            <i class="icon icon-1 unicon-arrow-up-right"></i>
+                        </a>
+                        <p class="fs-7 text-dark dark:text-white text-opacity-70">14-day trial, no credit card required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section end -->
+</div>
+
+<%- include('footer')  %>

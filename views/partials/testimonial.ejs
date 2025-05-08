@@ -1,0 +1,468 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get the Swiper containers
+      const imageSwiperEl = document.querySelector('.connect-image');
+      const textSwiperEl = document.querySelector('.swiper[data-uc-swiper*="connect: .connect-image"]');
+      const swiperParent = document.querySelector('.swiper-parent');
+  
+      // Function to get Swiper instance from element
+      function getSwiperInstance(element) {
+          // Assumes UIKit or similar framework; replace with your framework's API if different
+          try {
+              return UIkit.swiper(element) || null; // UIKit-specific; adjust as needed
+          } catch (e) {
+              console.warn('UIkit not found; attempting to access Swiper instance directly', e);
+              return element.swiper || null; // Fallback for vanilla Swiper
+          }
+      }
+  
+      // Get Swiper instances
+      const imageSwiper = getSwiperInstance(imageSwiperEl);
+      const textSwiper = getSwiperInstance(textSwiperEl);
+  
+      // Check if Swiper instances exist
+      if (!imageSwiper || !textSwiper) {
+          console.warn('Swiper instances not found. Ensure Swiper is initialized correctly.');
+          return;
+      }
+  
+      // Function to start autoplay with 5000ms delay
+      function startAutoplay() {
+          if (imageSwiper) {
+              imageSwiper.params.autoplay = {
+                  delay: 5000,
+                  disableOnInteraction: true
+              };
+              imageSwiper.autoplay.start();
+          }
+          if (textSwiper) {
+              textSwiper.params.autoplay = {
+                  delay: 5000,
+                  disableOnInteraction: true
+              };
+              textSwiper.autoplay.start();
+          }
+      }
+  
+      // Function to stop autoplay
+      function stopAutoplay() {
+          if (imageSwiper && imageSwiper.autoplay) {
+              imageSwiper.autoplay.stop();
+          }
+          if (textSwiper && textSwiper.autoplay) {
+              textSwiper.autoplay.stop();
+          }
+      }
+  
+      // Add hover event listeners to the parent container
+      if (swiperParent) {
+          swiperParent.addEventListener('mouseenter', stopAutoplay);
+          swiperParent.addEventListener('mouseleave', startAutoplay);
+      } else {
+          console.warn('Swiper parent container not found.');
+      }
+  });
+  </script>
+  
+  <!-- Review Popup -->
+  <div id="reviewPopup" class="review-popup">
+      <div class="review-popup-content">
+          <div class="review-popup-scroll">
+              <p id="fullReviewText"></p>
+          </div>
+      </div>
+      <button class="close-popup" onclick="closeReviewPopup()">&times;</button>
+  </div>
+  
+  <style>
+    h1,p{
+        font-family: "graphik",sans-serif;
+    }
+      /* Glassy Popup Overlay */
+      .review-popup {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          display: none;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+      }
+  
+      /* Popup Content */
+      .review-popup-content {
+          background: white;
+          padding: 40px;
+          border-radius: 12px;
+          width: 50%;
+          max-height: 85vh; /* 85% of viewport height */
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+          transform: scale(0.8);
+          transition: transform 0.3s ease-in-out;
+      }
+  
+      .review-popup-scroll {
+          overflow-y: auto;
+          max-height: calc(85vh - 80px); /* Account for padding */
+          padding-right: 15px; /* Space for scrollbar */
+      }
+  
+      #fullReviewText {
+          font-size: 25px;
+          line-height: 38px;
+          font-weight: 500;
+          letter-spacing: -0.05em;
+          margin: 0;
+      }
+  
+      /* Scrollbar styling */
+      .review-popup-scroll::-webkit-scrollbar {
+          width: 8px;
+      }
+      .review-popup-scroll::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+      }
+      .review-popup-scroll::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 10px;
+      }
+      .review-popup-scroll::-webkit-scrollbar-thumb:hover {
+          background: #555;
+      }
+  
+      @media (max-width: 600px) {
+          .review-popup-content {
+              padding: 20px;
+              margin: 10px;
+              width: 90%;
+          }
+          #fullReviewText {
+              font-size: 18px;
+              line-height: 28px;
+          }
+      }
+  
+      /* Close Button Outside */
+      #reviewPopup .close-popup {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          height: 40px;
+          width: 40px;
+          padding: 0;
+          font-size: 24px;
+          cursor: pointer;
+          background: none;
+          border: none;
+          background-color: #76767691;
+          color: white;
+          font-weight: bold;
+          z-index: 1001;
+      }
+  
+      .testimonial-text {
+          color: #323232;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 26px;
+      }
+  
+      /* Read More Button */
+      .read-more-btn {
+          margin-top: 5px;
+          background-color: transparent;
+          color: #999999;
+          font-size: 15px;
+          font-style: italic;
+          font-weight: 400;
+          cursor: pointer;
+          padding: 5px 8px 5px 0;
+          border-radius: 4px;
+      }
+  
+      /* Disable scrolling when modal is open */
+      body.modal-open {
+          overflow: hidden;
+      }
+  
+      /* Show animation */
+      .review-popup.show {
+          display: flex;
+          opacity: 1;
+      }
+  
+      .review-popup.show .review-popup-content {
+          transform: scale(1);
+      }
+  
+      /* YouTube Video Container - Portrait Mode */
+      .video-container-portrait {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          max-height: 600px;
+          overflow: hidden;
+      }
+  
+      .video-container-portrait iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+      }
+  
+      /* Restart Button */
+      .restart-video-btn {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.7);
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          display: none;
+          z-index: 10;
+      }
+  
+      /* Disable hover effects */
+      .uc-transition-toggle,
+      .uc-transition-scale-up,
+      .uc-transition-opaque {
+          transition: none !important;
+      }
+
+      .video-container-portrait {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        max-height: 600px;
+        overflow: hidden;
+    }
+
+    .video-container-portrait iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Replay Button */
+    .replay-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+        z-index: 10;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .replay-btn i {
+        margin-left: 3px; /* Adjust icon position */
+    }
+
+    .video-container-portrait:hover .replay-btn {
+        display: flex;
+    }
+  </style>
+  
+  <script>
+      function openReviewPopup(reviewText) {
+          document.getElementById("fullReviewText").innerText = reviewText;
+          const popup = document.getElementById("reviewPopup");
+          popup.style.display = "flex";
+          setTimeout(() => popup.classList.add("show"), 10);
+          document.body.classList.add("modal-open");
+      }
+  
+      function closeReviewPopup() {
+          const popup = document.getElementById("reviewPopup");
+          popup.classList.remove("show");
+          setTimeout(() => popup.style.display = "none", 300);
+          document.body.classList.remove("modal-open");
+      }
+  
+      // Close popup on clicking outside
+      document.getElementById("reviewPopup").addEventListener("click", function(event) {
+          if (event.target === this) {
+              closeReviewPopup();
+          }
+      });
+  
+      // Function to handle YouTube video events
+      function setupVideoPlayer(iframe) {
+          const container = iframe.parentElement;
+          const restartBtn = document.createElement('button');
+          restartBtn.className = 'restart-video-btn';
+          restartBtn.textContent = 'Restart Video';
+          container.appendChild(restartBtn);
+  
+          // Add event listener to iframe
+          iframe.addEventListener('load', function() {
+              // Hide YouTube controls and title
+              const src = iframe.src;
+              if (!src.includes('modestbranding=1') || !src.includes('showinfo=0')) {
+                  iframe.src = src + (src.includes('?') ? '&' : '?') + 'modestbranding=1&showinfo=0&controls=0';
+              }
+          });
+  
+          // Listen for video end (note: this requires postMessage API)
+          window.addEventListener('message', function(e) {
+              if (e.data === 'ended') {
+                  restartBtn.style.display = 'block';
+              }
+          });
+  
+          // Restart button click handler
+          restartBtn.addEventListener('click', function() {
+              const src = iframe.src;
+              iframe.src = src.replace(/\&t=\d+s/, ''); // Remove any timestamp
+              restartBtn.style.display = 'none';
+          });
+      }
+  </script>
+  
+  <!-- Server-side processing function -->
+  <% 
+  function processReviewText(text) {
+      // Check for YouTube Shorts link
+      const youtubeRegex = /https?:\/\/youtube\.com\/shorts\/[a-zA-Z0-9_-]+(\?[^\s]*)?/g;
+      const youtubeMatch = text.match(youtubeRegex);
+      
+      if (youtubeMatch && youtubeMatch.length > 0) {
+          // Remove the YouTube link from the text
+          const cleanText = text.replace(youtubeRegex, '').trim();
+          const videoId = youtubeMatch[0].match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/)[1];
+          
+          return {
+              hasVideo: true,
+              videoId: videoId,
+              text: cleanText
+          };
+      }
+      
+      return {
+          hasVideo: false,
+          text: text
+      };
+  }
+  %>
+  
+  <!-- Testimonial Section -->
+  <div id="clients_feedback" class="clients-feedback section panel overflow-hidden">
+      <div class="section-outer panel">
+          <div class="container max-w-lg">
+              <div class="section-inner panel swiper-parent">
+                  <h2 class="h4 sm:h3 lg:h2 m-0 text-center">What clients said:</h2>
+                  <div class="panel p-3 lg:p-6 bg-secondary dark:bg-gray-800 rounded-3 mt-4 sm:mt-6">
+                      <div class="row child-cols-12 sm:child-cols-6 col-match g-3 lg:g-8">
+                          <div>
+                              <div class="panel rounded-2 overflow-hidden" style="height: 600px;">
+                                  <div class="swiper connect-image" data-uc-swiper="items: 1; dots: .swiper-pagination; effect: fade; fade: true; allowTouchMove: false; disableOnInteraction: true;">
+                                      <div class="swiper-wrapper">
+                                          <% testimonial.forEach((slide) => { 
+                                              const processedReview = processReviewText(slide.review);
+                                          %>
+                                          <div class="swiper-slide">
+                                              <% if (processedReview.hasVideo) { %>
+                                                  <div class="video-container-portrait">
+                                                      <iframe src="https://www.youtube.com/embed/<%= processedReview.videoId %>?autoplay=1&mute=1&modestbranding=1&showinfo=0&controls=0" 
+                                                              frameborder="0" 
+                                                              style="scale:1.3"
+                                                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                              allowfullscreen>
+                                                      </iframe>
+                                                  </div>
+                                                  <script>
+                                                      // Setup the video player when this slide is active
+                                                      document.addEventListener('DOMContentLoaded', function() {
+                                                          const iframe = document.querySelector('.swiper-slide-active iframe');
+                                                          if (iframe) {
+                                                              setupVideoPlayer(iframe);
+                                                          }
+                                                      });
+                                                  </script>
+                                              <% } else { %>
+                                                  <figure class="featured-image m-0 rounded ratio ratio-3x4 overflow-hidden" style="height: 100%;">
+                                                      <img class="media-cover image" 
+                                                           src="<%= process.env.S3_BASE_URL + slide.image %>" 
+                                                           alt="<%= slide.name %>"
+                                                           style="object-fit: cover; height: 100%; width: 100%;">
+                                                  </figure>
+                                              <% } %>
+                                          </div>
+                                          <% }) %>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div>
+                              <div class="panel">
+                                  <div class="swiper h-100" data-uc-swiper="connect: .connect-image; items: 1;  dots: .swiper-pagination; effect: fade; fade: true;">
+                                      <div class="swiper-wrapper">
+                                          <% testimonial.forEach((slide) => { 
+                                              const processedReview = processReviewText(slide.review);
+                                              const displayText = processedReview.text.length > 350 ? 
+                                                  processedReview.text.slice(0, 350) + '...' : 
+                                                  processedReview.text;
+                                          %>
+                                          <div class="swiper-slide h-100">
+                                              <div class="panel vstack justify-between items-center gap-2 lg:gap-4 h-100 text-center">
+                                                  <div class="panel">
+                                                      <i style="color: #12715b; height:48px; width:48px; font-size:48px" class="fa-solid fa-quote-left"></i>
+                                                      <p class="fs-6 sm:fs-5 lg:fs-4 fw-bold mt-1 sm:mt-10 dark:text-white">
+                                                          <%= displayText %>
+                                                          <% if (processedReview.text.length > 350) { %>
+                                                              <span class="read-more-btn" onclick="openReviewPopup(`<%= processedReview.text.replace(/'/g, '\\\'').replace(/"/g, '&quot;') %>`)">
+                                                                  Read More
+                                                              </span>
+                                                          <% } %>
+                                                      </p>
+                                                  </div>
+                                                  <div class="panel pt-3">
+                                                      <div class="panel vstack items-center gap-narrow">
+                                                          <h6 class="h5 m-0"><%= slide.name %></h6>
+                                                          <span class="fs-6 opacity-70"><%= slide.companyProfile %></span>
+                                                      </div>
+                                                      <div class="panel mt-6">
+                                                          <div class="swiper-pagination text-primary m-0 justify-center"></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <% }) %>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

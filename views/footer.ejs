@@ -10,7 +10,7 @@
                                   <div class="panel vstack items-start gap-4 ltr:md:pe-8 rtl:md:ps-8">
                                       <div class="vstack gap-2">
                                           <a href='/'>
-                                              <img style="height: 60px;" class=" text-primary" src="/assets/images/logo-red.png" alt="Lexend">
+                                              <img style="height: 60px;" class=" text-primary" src="/assets/images/logo.png" alt="INSD">
                                           </a>
                                           <p>INSD Raipur is a leading design institute offering professional courses in Fashion, Interior, Graphic Design, Animation, UI/UX, and more — with global exposure and industry-ready training.</p>
                                       </div>
@@ -19,6 +19,7 @@
                               </div>
                               <div>
                                   <ul class="nav-y gap-1 fw-medium">
+                                    <li><a href='/'>Home</a></li>
                                       <li><a href='/about'>About</a></li>
                                       <li><a href="/courses">Courses</a></li>
                                       <li><a href="/blogs">Insights</a></li>
@@ -39,7 +40,7 @@
                                     <li><a href="/courses">Animation Designing</a></li>
                                   </ul>
                               </div>
-                              <div style="min-width: 30%;">
+                              <div class="width30">
                                   <ul class="nav-y gap-1 fw-medium" style="gap: 20px !important;">
                                     <li>
                                         <div class="icon-wrapper"><i class="fas fa-map-marker-alt"></i></div>
@@ -119,6 +120,14 @@
     }
     p,span,a{
         font-family: "graphik",sans-serif;
+    }
+    .width30{
+        min-width: 30%;
+    }
+    @media (max-width:600px) {
+        .width30{
+            min-width: 100%;
+        }
     }
 </style>
       <!-- Footer end -->

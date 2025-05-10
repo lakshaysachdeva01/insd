@@ -19,11 +19,11 @@
       <div class="container max-w-xl">
           <div class="post-header">
               <div class="panel vstack gap-4 md:gap-6 xl:gap-8 text-center">
-                  <div class="panel vstack items-center max-w-400px sm:max-w-500px xl:max-w-md mx-auto gap-2 md:gap-3">
+                  <div class="panel vstack items-center max-w-400px sm:max-w-500px xl:max-w-870 mx-auto gap-2 md:gap-3">
                       <h1 class="h4 sm:h2 lg:h1 xl:display-6"><%= blogfull.title %></h1>
                   </div>
                   <figure class="featured-image m-0">
-                      <figure class="featured-image m-0 rounded ratio ratio-2x1 rounded uc-transition-toggle overflow-hidden">
+                      <figure style="height: 100% !important;" class="featured-image m-0  rounded ">
                         <% 
                         // Function to convert a YouTube URL (watch or short form) into an embeddable URL
                         function convertToEmbedUrl(url) {
@@ -53,7 +53,7 @@
                       <% } else if (blogfull?.banner?.bannerType === "IMAGE" && blogfull?.banner?.image) { %>
                           <!-- Render image if the banner type is IMAGE and image URL exists -->
                           <img 
-                          class="media-cover image uc-transition-scale-up uc-transition-opaque"
+                          class=" image uc-transition-scale-up uc-transition-opaque"
                               style="padding-top: 0; width:100%; " 
                               src="<%= process.env.S3_BASE_URL + blogfull.banner.image %>" 
                               alt="blog_banner">
@@ -108,8 +108,8 @@
 <style>
   /* Table styles */
 .blog-description p, .item-description p,.blog-description li ,.blog-description th,.item-description th  ,.item-description li{
-  font-size: 18px;
-    line-height: 32px;
+  font-size: 16px;
+    line-height: 30px;
     color: rgba(0, 0, 0, 0.7);
 }
 .item-description td,.blog-description td  {
@@ -179,11 +179,17 @@
     display: flex;
     justify-content: center;
   }
-  
+  .instagram-media{
+    max-height: 100vh;
+    width: auto !important;
+  }
   .fb-video {
     width: 100% !important;
     max-width: 540px;
     min-width: 300px;
+  }
+  .embed .Footer{
+    display: none !important;
   }
   h1,h2,h3,h4,h5,h6,span,p,a,li,tr,td,th{
     font-family: "graphik",sans-serif;
@@ -244,23 +250,29 @@
                     });
                   });
                 </script>
-                
                 <% if (item.instagram) { %>
-                  <div class="instagram-embed" style="justify-content: center;
-                    display: flex
-                ;">
-                    <%- item.instagram %>
+                  <div class="instagram-embed" style="display: flex; justify-content: center;">
+                    <blockquote class="instagram-media"
+                                data-instgrm-permalink="<%= item.instagram %>"
+                                data-instgrm-version="14"
+                                data-captioned="false"
+                                
+                                style="background: #fff; border: 0; margin: 0; padding: 0; width: 100%;">
+                    </blockquote>
                   </div>
                   <script>
-                    // Load Instagram's embed.js if not already loaded
                     if (!window.instgrm) {
                       const script = document.createElement('script');
-                      script.src = 'https://www.instagram.com/embed.js';
+                      script.src = "https://www.instagram.com/embed.js";
                       script.async = true;
                       document.body.appendChild(script);
+                    } else {
+                      window.instgrm.Embeds.process();
                     }
                   </script>
                 <% } %>
+                
+                
                 
                 
                 <% if (item.facebook) { %>
@@ -331,102 +343,186 @@
                  } %>
                  
                  <% if (item.multipleImages && item.multipleImages.length > 0) { %>
-                   <div class="swiper-container">
-                     <div class="swiper-wrapper">
-                       <% item.multipleImages.forEach(function(image, index) { %>
-                         <div class="swiper-slide">
-                           <div class="popup-trigger" data-type="image" data-src="<%= process.env.S3_BASE_URL + image %>" >
-                             <img 
-                               src="<%= process.env.S3_BASE_URL + image %>" 
-                               alt="Image <%= index + 1 %>"
-                               class="gallery-image"
-                               data-index="<%= index %>"
-                             />
-                           </div>
-                         </div>
-                       <% }); %>
-                     </div>
-                   </div>
-                 <% } %>
-                 
-                 <style>
-                   .swiper-container {
-                     width: 100%;
-                     padding: 40px 0;
-                   overflow: hidden;
-                   }
-                 
-                   .swiper-slide {
-                     transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
-                     border-radius: 20px;
-                     overflow: hidden;
-                     max-width: 80% !important;
-                   }
-                 
-                   /* Center image effect */
-                   .swiper-slide-active img {
-                     transform: scale(1);
-                     filter: none; /* Full color */
-                     opacity: 1;
-                     
-                   }
-                 
-                   /* Side images effect */
-                   .swiper-slide-prev img, 
-                   .swiper-slide-next img {
-                     transform: scale(0.94);
-                   
-                     opacity: 1;
-                     
-                   }
-                 
-                   .swiper-slide img {
-                     width: 100%;
-                     border-radius: 20px;
-                     transition: all 0.3s ease-in-out;
-                   }
-                 </style>
-                 
-                 <script>
-                   document.addEventListener("DOMContentLoaded", function () {
-                     const swiper = new Swiper(".swiper-container", {
-                       loop: true,
-                       slidesPerView: "auto",
-                       centeredSlides: true,
-                       spaceBetween: 0,
-                       autoplay: {
-                         delay: 3000,
-                         disableOnInteraction: false,
-                       },
-                       navigation: {
-                         nextEl: ".swiper-button-next",
-                         prevEl: ".swiper-button-prev",
-                       },
-                       on: {
-                         slideChange: function () {
-                           document.querySelectorAll(".swiper-slide img").forEach(img => {
-                            
-                             img.style.opacity = "1";
-                           });
-                 
-                           let activeImage = document.querySelector(".swiper-slide-active img");
-                           if (activeImage) {
-                             
-                             activeImage.style.opacity = "1";
-                           }
-                         },
-                       },
-                     });
-                   });
-                 </script>
-                 
-                 
+                  <div class="image-gallery swiper-container">
+                    <div class="swiper-wrapper" >
+                      <% item.multipleImages.forEach(function(image, index) { %>
+                        <div class="swiper-slide">
+                          <div class="popup-trigger" data-type="image" data-src="<%= process.env.S3_BASE_URL + image %>">
+                            <img 
+                              src="<%= process.env.S3_BASE_URL + image %>" 
+                              alt="Image <%= index + 1 %>"
+                              class="gallery-image"
+                              data-index="<%= index %>"
+                            />
+                          </div>
+                        </div>
+                      <% }); %>
+                    </div>
+                  </div>
+                  
+                <% } %>
+                
+                <style>
+                  .image-gallery {
+                    width: 100%;
+                    padding: 40px 0;
+                    overflow: hidden;
+                  }
+                
+                  .swiper-slide,
+                  .static-slide {
+                    border-radius: 20px;
+                    overflow: hidden;
+                    width: auto;
+                    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+                  }
+                
+               
+                
+                  /* Center effect for swiper */
+                  .swiper-slide-active img {
+                    transform: scale(1);
+                    filter: none;
+                    
+                    opacity: 1;
+                  }
+                
+                  .swiper-slide-prev img,
+                  .swiper-slide-next img {
+                    transform: scale(0.94);
+                    opacity: 1;
+                  }
+                
+                  /* Static wrapper styles for 2 images on desktop */
+                  .static-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                  }
+                
+                  .static-slide {
+                    flex: 1;
+                    width: auto;
+                  }
+                
+                  @media (max-width: 768px) {
+                    .static-gallery {
+                      display: block;
+                    }
+                
+                    .static-wrapper {
+                      display: block;
+                    }
+                
+                    .static-slide {
+                      width: 100%;
+                      max-width: 100%;
+                    }
+                
+                    .static-gallery {
+                      /* Turn into swiper on mobile */
+                    }
+                
+                    .static-wrapper {
+                      display: flex;
+                    }
+                
+                    .static-slide {
+                      min-width: 100%;
+                    }
+                  }
+                  .swiper-slide,
+.static-slide {
+  border-radius: 20px;
+  margin: 0 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.swiper-slide img,
+.static-slide img {
+  height: auto;
+  max-height: 90vh;
+  width: auto;
+  max-width: 90vw;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Fix space for 2 slides on web */
+.static-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.static-slide {
+  flex: 0 1 auto;
+  max-width: calc(50% - 8px);
+}
+
+@media (max-width: 768px) {
+  .static-wrapper {
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+  }
+
+  .static-slide {
+    scroll-snap-align: start;
+    min-width: 90%;
+  }
+}
+
+                </style>
+                
+                <script>document.addEventListener("DOMContentLoaded", function () {
+                  const isMobile = window.innerWidth <= 768;
+                  const imageCount = <%= item.multipleImages.length %>;
+                
+                  if (isMobile || imageCount > 2) {
+                    const swiper = new Swiper(".swiper-container", {
+                      loop: imageCount > 1, // prevent loop on single image
+                      slidesPerView: "auto",
+                      centeredSlides: true,
+                      spaceBetween: 0,
+                      autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                      },
+                      navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                      },
+                      on: {
+                        slideChange: function () {
+                          document.querySelectorAll(".swiper-slide img").forEach(img => {
+                            img.style.opacity = "1";
+                          });
+                          let activeImage = document.querySelector(".swiper-slide-active img");
+                          if (activeImage) {
+                            activeImage.style.opacity = "1";
+                          }
+                        },
+                      },
+                    });
+                  }
+                });
+                
+                </script>
+                
              
                  <% if (item.button && item.button.hyperLink && item.button.title) { %>
                    <div class="button" style="display: flex
 ;
    justify-content: center;">
-                   <a style="height: 55px; margin:25px 0; margin-top:10px" href="<%= item.button.hyperLink %>" class="hover1"><%= item.button.title %></a>
+                   <a style="height: 55px; margin:25px 0; margin-top:10px; font-family:graphik,sans-serif" href="<%= item.button.hyperLink %>" target="_blank" class="btn btn-sm btn-primary rounded-default text-white text-none d-none lg:d-inline-flex"><%= item.button.title %></a>
                  </div>
                  <% } %> <!-- Only display the button if both hyperLink and title exist -->
              
@@ -434,7 +530,7 @@
              <% }); %>
              
          </div>
-              <div class="post-footer panel vstack sm:hstack gap-3 justify-between justifybetween border-top py-2 ">
+              <div class="post-footer panel vstack sm:hstack gap-3 justify-between justifybetween border-top py-2 mt-5">
                   <ul class="nav-x gap-narrow text-primary">
                       <li><span class="text-black dark:text-white me-narrow">Tags:</span></li>
                       <% if (blogfull.seoDetails.tags && blogfull.seoDetails.tags.length > 0) { %>
@@ -557,36 +653,7 @@ function showCustomAlert() {
       </div>
   </article>
 
-  <!-- Newsletter -->
-  <div id="blog_newsletter" class="blog-newsletter section panel overflow-hidden">
-      <div class="section-outer panel pb-4 lg:pb-6 xl:pb-9">
-          <div class="container max-w-xl">
-              <div class="section-inner panel p-3 py-6 lg:p-6 xl:p-8 rounded-2 bg-secondary dark:bg-gray-800 overflow-hidden">
-                  <div class="row child-cols-12 md:child-cols g-6 justify-between items-center" data-uc-grid>
-                      <div>
-                          <div class="vstack gap-2 max-w-500px xl:max-w-600px">
-                              <h2 class="h4 md:h3 lg:h2 m-0">Get the latest updates</h2>
-                              <p class="fs-6 lg:fs-5">Subscribe to get our most-popular proposal eBook and more top revenue content to help you send docs faster.</p>
-                              <form class="row child-cols g-1 mt-1 xl:mt-2">
-                                  <div>
-                                      <input class="form-control h-48px xl:h-56px w-full bg-white dark:border-white dark:bg-opacity-10 dark:border-opacity-0 dark:text-white" type="text" placeholder="Your email address" required="">
-                                  </div>
-                                  <div class="col-12 sm:col-auto">
-                                      <button class="btn btn-md h-48px xl:h-56px w-100 lg:min-w-150px xl:min-w-200px btn-primary text-white">Subscribe</button>
-                                  </div>
-                              </form>
-                              <p class="fs-7 text-dark dark:text-white text-opacity-70">Don't worry we don't spam.</p>
-                          </div>
-                      </div>
-                      <div class="md:col-auto d-none md:d-block">
-                          <img class="w-250px lg:w-300px xl:w-400px d-block dark:d-none" src="https://unistudio.co/html/lexend/assets/images/template/newsletter.svg" alt="newsletter">
-                          <img class="w-250px lg:w-300px xl:w-400px d-none dark:d-block" src="https://unistudio.co/html/lexend/assets/images/template/newsletter-dark.svg" alt="newsletter-dark">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+
 </div>
 
 

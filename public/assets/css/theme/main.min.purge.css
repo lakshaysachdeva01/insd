@@ -163,12 +163,12 @@
   --color-primary-50: #e7f1ef;
   --color-primary-100: #d0e3de;
   --color-primary-200: #a0c6bd;
-  --color-primary-300: #71aa9d;
-  --color-primary-400: #418d7c;
-  --color-primary-500: #12715b;
-  --color-primary-600: #0e5a49;
-  --color-primary-700: #0b4437;
-  --color-primary-800: #072d24;
+  --color-primary-300: #ac3948;
+  --color-primary-400: #ac3948;
+  --color-primary-500: #ac3948;
+  --color-primary-600: #ac3948;
+  --color-primary-700: #ac3948;
+  --color-primary-800: #ac3948;
   --color-primary-900: #041712;
   --color-secondary: #f5eee9;
   --color-secondary-10: #fffefe;
@@ -638,7 +638,7 @@
   --heading-font-transform: initial;
   --heading-color-text: inherit;
   --link-color-text: var(--color-primary);
-  --link-color-text-hover: var(--color-primary-60);
+  --link-color-text-hover: #ac3948;
   --button-font-typeface: var(--font-family-tertiary);
   --button-font-weight: 500;
   --button-font-line-height: initial;
@@ -726,7 +726,7 @@ html {
   text-rendering: optimizeLegibility;
 }
 body {
-  font-family: var(--body-font-typeface);
+  font-family: "graphik",sans-serif;
   font-size: var(--body-font-size, 1rem);
   font-weight: var(--body-font-weight, 400);
   letter-spacing: var(--body-font-spacing, normal);
@@ -891,6 +891,43 @@ pre:where(.uc-dark) {
 :not(pre) > samp {
   color: inherit;
 }
+/* Apply Graphik font to all input, textarea, and select placeholders */
+::placeholder {
+  font-family: "Graphik", sans-serif !important;
+}
+
+/* For cross-browser support */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  font-family: "Graphik", sans-serif !important;
+}
+
+/* Safari/Edge */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  font-family: "Graphik", sans-serif !important;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+select::-moz-placeholder {
+  font-family: "Graphik", sans-serif !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  font-family: "Graphik", sans-serif !important;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder,
+select:-moz-placeholder {
+  font-family: "Graphik", sans-serif !important;
+}
+
 pre code {
   font-family: var(--font-code-family) !important;
   background: rgba(136, 136, 136, 0.15);
@@ -1433,7 +1470,13 @@ p.text-muted:where(.uc-dark) {
   transition: opacity 0.2s ease;
 }
 .nav-y a:hover {
-  opacity: 1 !important;
+  opacity: 0.6 !important;
+}
+.nav-y li:hover{
+  scale: 1.02;
+}
+.nav-x li:hover{
+  scale: 1.05;
 }
 .nav-y .uc-nav-sub {
   display: flex;
@@ -1467,29 +1510,30 @@ p.text-muted:where(.uc-dark) {
   z-index: 1;
 }
 .nav-y .uc-parent > a::after {
-  content: "\e940";
-  font-family: Unicons;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: 1.125rem;
-  font-weight: 700;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.6;
+  content: "\f078"; /* Unicode for 'chevron-down' */
+font-family: "Font Awesome 6 Free"; /* Or 'Font Awesome 5 Free' if you're using that */
+font-weight: 900; /* 900 for solid style */
+position: absolute;
+top: 50%;
+right: 0;
+transform: translateY(-50%);
+font-size: 0.9rem;
+width: 1.5rem;
+height: 1.5rem;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+opacity: 0.6;
+
 }
 .nav-y .uc-parent.uc-open > a::after {
-  content: "\e93f";
+  transform: rotate(180deg);
 }
 .nav-y .uc-parent.uc-open .uc-nav-sub {
   opacity: 1;
 }
 .nav-y:hover a {
-  opacity: 0.6;
+  opacity: 1;
 }
 .nav-x {
   display: flex;
@@ -1665,6 +1709,7 @@ html[dir="rtl"] .uc-navbar-left {
 .uc-accordion-title {
   position: relative;
   text-decoration: none;
+  padding-right: 20px;
   font-weight: 500;
   display: flex;
 }
@@ -1694,7 +1739,7 @@ html[dir="rtl"] .uc-navbar-left {
   align-items: center;
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -8px;
   width: 28px;
   height: 28px;
   font-size: 16px;
@@ -3175,8 +3220,8 @@ header.uc-header.header-six > .uc-navbar-sticky .uc-navbar-main .uc-navbar {
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #0d6efd;
-  --bs-link-hover-color: #0a58ca;
+  --bs-link-color: #ac3948;
+  --bs-link-hover-color: #ac3948;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -4378,7 +4423,7 @@ progress {
 }
 .btn:hover {
   color: var(--bs-btn-hover-color);
-  background-color: var(--bs-btn-hover-bg);
+  background-color:#ac3948;
   border-color: var(--bs-btn-hover-border-color);
 }
 .btn:focus-visible {
@@ -4393,7 +4438,7 @@ progress {
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
   color: var(--bs-btn-active-color);
-  background-color: var(--bs-btn-active-bg);
+  background-color:#ac3948;
   border-color: var(--bs-btn-active-border-color);
 }
 .btn.active:focus-visible,
@@ -4445,7 +4490,7 @@ fieldset:disabled .btn {
 }
 .btn-success {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #4caf50;
+  --bs-btn-bg: #ac3948;
   --bs-btn-border-color: #4caf50;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #419544;
@@ -6913,10 +6958,7 @@ textarea.form-control-lg {
 :where(.uc-dark) .dark\:bg-primary,
 :where(.uc-dark) .dark\:hover\:bg-primary:hover {
   --bs-bg-opacity: 1;
-  background-color: rgba(
-    var(--bs-primary-rgb),
-    var(--bs-bg-opacity)
-  ) !important;
+  background-color:#ac3948 !important;
 }
 :where(.uc-dark) .dark\:bg-secondary,
 :where(.uc-dark) .dark\:hover\:bg-secondary:hover {
@@ -8359,6 +8401,9 @@ textarea.form-control-lg {
   .xl\:max-w-md {
     max-width: 720px !important;
   }
+  .xl\:max-w-870 {
+    max-width: 870px !important;
+  }
   .xl\:max-w-lg {
     max-width: 1040px !important;
   }
@@ -8829,7 +8874,7 @@ textarea.form-control-lg {
 }
 
 .uc-navbar-nav li a:hover{
-  color: #ac3948 !important;
+  color: #d59ca3 !important;
 }
 
 .uc-navbar-dropdown li{
@@ -8841,6 +8886,9 @@ textarea.form-control-lg {
 }
 span{
   font-family: 'graphik',sans-serif !important;
+}
+.courseoutline{
+  border-radius: 16px !important;
 }
 
 .coursecards:hover .courseoutline{
@@ -8883,6 +8931,31 @@ ul li{
 .width-25p{
   width: 25%;
 }
+
+@media (max-width:1000px) {
+  .width-25p{
+    width: 33%;
+  }
+  
+}
+@media (max-width:768px) {
+  .width-25p{
+    width: 50%;
+  }
+  
+}
+@media (max-width:620px) {
+  .width-25p{
+    width: 750%;
+  }
+  
+}
+@media (max-width:508px) {
+  .width-25p{
+    width: 100%;
+  }
+  
+}
 .width-25p .tier i{
   color:#d6a27d !important;
 }
@@ -8893,4 +8966,29 @@ ul li{
 
 .feature-item .uc-link:hover{
   color: #ac3948 ;
+}
+
+@media (max-width:650px) {
+  .careertext{
+    padding-left: 10px !important;
+    text-align: left;
+    max-width: 78%;
+  }
+  
+}
+
+
+.uc-switcher-nav {
+  max-width: 100%;
+  display: flex !important;
+  flex-wrap: nowrap !important;         /* prevent wrapping */
+  overflow-x: auto !important;          /* enable horizontal scroll */
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  -webkit-overflow-scrolling: touch !important; /* smooth scroll on iOS */
+   /* Firefox - hide scrollbar */
+}
+
+.uc-switcher-nav::-webkit-scrollbar {
+  display: none !important;             /* Chrome/Safari - hide scrollbar */
 }

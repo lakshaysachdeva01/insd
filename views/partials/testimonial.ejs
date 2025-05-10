@@ -186,10 +186,30 @@
     .uc-transition-opaque {
         transition: none !important;
     }
+    .text-only-slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+
+    .padding-3{
+        padding: 1.5rem;
+    }
+    @media (max-width:600px) {
+        .padding-3{
+            padding: 0.8rem;
+        }
+    }
 </style>
 
 <script>
     let videoPlayers = {};
+    let swiperInstances = {};
+    let currentActiveSlide = 0;
 
     function onYouTubeIframeAPIReady() {
         document.querySelectorAll('.youtube-video').forEach(iframe => {
@@ -201,10 +221,45 @@
                 }
             });
         });
+        
+        // Initialize swiper instances
+        const imageSwiper = new Swiper('.connect-image', {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            allowTouchMove: false,
+            autoHeight: true,
+            on: {
+                slideChange: function(swiper) {
+                    currentActiveSlide = swiper.activeIndex;
+                    // Pause all videos when slide changes
+                    Object.values(videoPlayers).forEach(player => {
+                        player.pauseVideo();
+                    });
+                }
+            }
+        });
+        
+        const textSwiper = new Swiper('.connect-text', {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoHeight: true
+        });
+        
+        // Connect the two swipers
+        imageSwiper.controller.control = textSwiper;
+        textSwiper.controller.control = imageSwiper;
+        
+        swiperInstances.image = imageSwiper;
+        swiperInstances.text = textSwiper;
     }
 
     function onPlayerReady(event) {
-        event.target.pauseVideo(); // Pause all videos initially
+        // Do not autoplay initially
+        event.target.pauseVideo();
     }
 
     function onPlayerStateChange(event) {
@@ -212,6 +267,12 @@
         
         if (event.data === YT.PlayerState.ENDED) {
             container.classList.add('ended'); // Show replay button
+            // Auto-advance to next slide when video ends
+            setTimeout(() => {
+                if (swiperInstances.image && !swiperInstances.image.destroyed) {
+                    swiperInstances.image.slideNext();
+                }
+            }, 2000);
         } else {
             container.classList.remove('ended'); // Hide replay button
         }
@@ -223,30 +284,6 @@
             videoPlayers[videoId].playVideo();
         }
     }
-
-    // Intersection Observer for autoplay on scroll
-    document.addEventListener('DOMContentLoaded', function() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const iframe = entry.target.querySelector('iframe');
-                const videoId = iframe.id.replace('video-', '');
-                
-                if (entry.isIntersecting && !entry.target.classList.contains('ended')) {
-                    if (videoPlayers[videoId]) {
-                        videoPlayers[videoId].playVideo(); // Autoplay when visible
-                    }
-                } else {
-                    if (videoPlayers[videoId]) {
-                        videoPlayers[videoId].pauseVideo(); // Pause when not visible
-                    }
-                }
-            });
-        }, { threshold: 0.7 });
-
-        document.querySelectorAll('.video-container-portrait').forEach(container => {
-            observer.observe(container);
-        });
-    });
 
     // Load YouTube API
     const tag = document.createElement('script');
@@ -281,30 +318,6 @@
     });
 </script>
 
-<!-- Server-side processing function -->
-<% 
-function processReviewText(text) {
-    const youtubeRegex = /https?:\/\/youtube\.com\/shorts\/[a-zA-Z0-9_-]+(\?[^\s]*)?/g;
-    const youtubeMatch = text.match(youtubeRegex);
-    
-    if (youtubeMatch && youtubeMatch.length > 0) {
-        const cleanText = text.replace(youtubeRegex, '').trim();
-        const videoId = youtubeMatch[0].match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/)[1];
-        
-        return {
-            hasVideo: true,
-            videoId: videoId,
-            text: cleanText
-        };
-    }
-    
-    return {
-        hasVideo: false,
-        text: text
-    };
-}
-%>
-
 <!-- Testimonial Section -->
 <div id="clients_feedback" class="clients-feedback section panel overflow-hidden">
     <div class="section-outer panel">
@@ -312,37 +325,44 @@ function processReviewText(text) {
             <div class="section-inner panel swiper-parent">
                 <h2 class="h4 sm:h3 lg:h2 m-0 text-center">Real Stories . Real Impact</h2>
                 <p style="font-size: 18px;" class="text-center mt-2 opacity-70"> Voices that reflect our impact.</p>
-                <div class="panel p-3 lg:p-6 bg-secondary dark:bg-gray-800 rounded-3 mt-4 sm:mt-6">
+                <div class="panel padding-3  lg:p-6 bg-secondary dark:bg-gray-800 rounded-3 mt-4 sm:mt-6">
                     <div class="row child-cols-12 sm:child-cols-6 col-match g-3 lg:g-8">
                         <div>
-                            <div class="panel rounded-2 overflow-hidden" style="height: 600px;">
-                                <div class="swiper connect-image" data-uc-swiper="items: 1; dots: .swiper-pagination; effect: fade; fade: true; allowTouchMove: false; disableOnInteraction: true;">
-                                    <div class="swiper-wrapper">
-                                        <% testimonial.forEach((slide) => { 
-                                            const processedReview = processReviewText(slide.review);
+                            <div class="panel rounded-2 overflow-hidden" style="height: 650px;">
+                                <div class="swiper connect-image" style="height: 100% !important;" data-uc-swiper="items: 1; dots: .swiper-pagination; effect: fade; fade: true; allowTouchMove: false; disableOnInteraction: true;">
+                                    <div  class="swiper-wrapper" style="height: 100% !important;">
+                                        <% testimonial.forEach((slide, index) => { 
+                                            const hasVideo = slide.link && slide.link.includes('youtube.com/shorts');
+                                            const videoId = hasVideo ? slide.link.match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/)[1] : null;
                                         %>
-                                        <div class="swiper-slide">
-                                            <% if (processedReview.hasVideo) { %>
+                                        <div  class="swiper-slide">
+                                            <% if (hasVideo) { %>
                                                 <div class="video-container-portrait">
-                                                    <iframe src="https://www.youtube.com/embed/<%= processedReview.videoId %>?enablejsapi=1&autoplay=0&mute=0&modestbranding=1&showinfo=0&controls=0&disablekb=1&fs=0&rel=0" 
+                                                    <iframe src="https://www.youtube.com/embed/<%= videoId %>?enablejsapi=1&autoplay=0&mute=0&modestbranding=1&showinfo=0&controls=0&disablekb=1&fs=0&rel=0" 
                                                             frameborder="0" 
                                                             style="scale:1.4"
                                                             allow="accelerometer; encrypted-media; gyroscope"
                                                             allowfullscreen
-                                                            id="video-<%= processedReview.videoId %>"
+                                                            id="video-<%= videoId %>"
                                                             class="youtube-video">
                                                     </iframe>
-                                                    <button class="replay-btn" onclick="replayVideo('<%= processedReview.videoId %>')">
+                                                    <button class="replay-btn" onclick="replayVideo('<%= videoId %>')">
                                                         <i class="fas fa-redo"></i>
                                                     </button>
                                                 </div>
                                             <% } else { %>
-                                                <figure class="featured-image m-0 rounded ratio ratio-3x4 overflow-hidden" style="height: 100%;">
-                                                    <img class="media-cover image" 
-                                                         src="<%= process.env.S3_BASE_URL + slide.image %>" 
-                                                         alt="<%= slide.name %>"
-                                                         style="object-fit: cover; height: 100%; width: 100%;">
-                                                </figure>
+                                                <% if (slide.image) { %>
+                                                    <figure class="featured-image  m-0 rounded ratio ratio-3x4 overflow-hidden" style="scale:1.15;height: 100%;">
+                                                        <img class="media-cover image" 
+                                                             src="<%= process.env.S3_BASE_URL + slide.image %>" 
+                                                             alt="<%= slide.name %>"
+                                                             style="object-fit: cover; height: 100%; border-radius:24px; width: 100%;">
+                                                    </figure>
+                                                <% } else { %>
+                                                    <div class="text-only-slide">
+                                                        <p class="testimonial-text"><%= slide.review %></p>
+                                                    </div>
+                                                <% } %>
                                             <% } %>
                                         </div>
                                         <% }) %>
@@ -352,13 +372,12 @@ function processReviewText(text) {
                         </div>
                         <div>
                             <div class="panel">
-                                <div class="swiper h-100" data-uc-swiper="connect: .connect-image; items: 1; dots: .swiper-pagination; effect: fade; fade: true;">
+                                <div class="swiper h-100 connect-text" data-uc-swiper="connect: .connect-image; items: 1; dots: .swiper-pagination; effect: fade; fade: true;">
                                     <div class="swiper-wrapper">
                                         <% testimonial.forEach((slide) => { 
-                                            const processedReview = processReviewText(slide.review);
-                                            const displayText = processedReview.text.length > 450 ? 
-                                                processedReview.text.slice(0, 450) + '...' : 
-                                                processedReview.text;
+                                            const displayText = slide.review.length > 450 ? 
+                                                slide.review.slice(0, 450) + '...' : 
+                                                slide.review;
                                         %>
                                         <div class="swiper-slide h-100">
                                             <div class="panel vstack justify-between items-center gap-2 lg:gap-4 h-100 text-center">
@@ -366,8 +385,8 @@ function processReviewText(text) {
                                                     <i style="color: #ac3948; height:48px; width:48px; font-size:48px" class="fa-solid fa-quote-left"></i>
                                                     <p class="fs-6 sm:fs-5 lg:fs-4 fw-bold mt-1 sm:mt-4 dark:text-white" style="padding: 12PX;">
                                                         <%= displayText %>
-                                                        <% if (processedReview.text.length > 450) { %>
-                                                            <span class="read-more-btn" onclick="openReviewPopup(`<%= processedReview.text.replace(/'/g, '\\\'').replace(/"/g, '"') %>`)">
+                                                        <% if (slide.review.length > 450) { %>
+                                                            <span class="read-more-btn" onclick="openReviewPopup(`<%= slide.review.replace(/'/g, '\\\'').replace(/"/g, '"') %>`)">
                                                                 Read More
                                                             </span>
                                                         <% } %>

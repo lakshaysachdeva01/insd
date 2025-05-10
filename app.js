@@ -89,6 +89,8 @@ app.get('/our-curriculum', async (req, res) => {
 
 app.get('/courses', async (req, res) => {
     const baseUrl = req.protocol + '://' + req.get('Host');
+    const testimonial = await gettestimonial();
+    const clients = await getclientle();
     const seoDetails = {
         title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
         metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
@@ -97,7 +99,7 @@ app.get('/courses', async (req, res) => {
         canonical: `${baseUrl}/our-curriculum`,
     }; 
    
-    res.render('courses', { body: "", baseUrl, seoDetails });
+    res.render('courses', { body: "", baseUrl,clients,testimonial, seoDetails });
 });
 
 app.get('/fashion-designing', async (req, res) => {

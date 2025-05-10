@@ -121,7 +121,50 @@
     </head>
     <body class="uni-body panel bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 overflow-x-hidden disable-cursor">
 
-       
+        <div id="uc-menu-panel" data-uc-offcanvas="overlay: true;">
+            <div class="uc-offcanvas-bar bg-white text-dark dark:bg-gray-900 dark:text-white">
+                <header class="uc-offcanvas-header hstack justify-between items-center pb-2 bg-white dark:bg-gray-900">
+                    <div class="uc-logo">
+                        <a class='h5 text-none text-gray-900 dark:text-white' href='/'>
+                            <img style="height: 50px;" src="/assets/images/logo-red.png" alt="INSD">
+                        </a>
+                    </div>
+                    <button class="uc-offcanvas-close rtl:end-auto rtl:start-0 m-1 mt-2 icon-3 btn border-0 dark:text-white dark:text-opacity-50 hover:text-primary hover:rotate-90 duration-150 transition-all" type="button">
+                        <i style="font-size: 24px;
+    color: #7a7c7f;
+    padding-right: 5px;" class="fa-solid fa-xmark"></i>
+                    </button>
+                </header>
+
+                <div class="panel">
+                    
+                    <ul class="nav-y gap-narrow fw-medium fs-6" data-uc-nav>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='/about'>About</a></li>
+                        <a href="/courses">Courses</a>
+                        <li class="uc-parent">
+                            
+                            <ul class="uc-nav-sub" >
+                                <li><a href='/fashion-designing'>Fashion Designing</a></li>
+                                <li><a href='/interior-designing'>Interior Designing</a></li>
+                                <li><a href='/graphic-designing'>Graphic Designing</a></li>
+                                <li><a href='/photography'>Photography</a></li>
+                                <li><a href='/event-management'>Event Management</a></li>
+                                <li><a href='/uiux-designing'>UI/UX Designing</a></li>
+                                <li><a href='/digital-marketing'>Digital Marketing</a></li>
+                                <li><a href='/animation-designing'>Animation Designing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='/contact'>Contact</a></li>
+                        <li><a href='/blogs'>Insights</a></li>
+                        <li><a href='/gallery'>Glimpeses</a></li>
+                       
+                       
+                        </ul>
+                
+                </div>
+            </div>
+        </div>
         <!--  Cart panel -->
        
         <style>
@@ -253,19 +296,18 @@
                                                         <video style="height: 100%;
                                                         max-height:300px;
                                          border-radius:10px !important;
-                                        box-shadow: 0px 4px 10px #00000036;
     object-fit: cover;" autoplay loop muted playsinline class="w-100 h-auto object-cover rounded">
                                             <source src="/assets/images/ddvideo.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                           </video>
                                                     </div>
-                                                    <div class="vstack justify-between gap-2">
+                                                    <div style="flex: none !important;" class="vstack  gap-2">
                                                         <div class="vstack gap-1">
-                                                            <h5 class="h6 m-0">Ready to get started or need help choosing a course?</h5>
-<p class="fs-7 opacity-70">Fill out the admission form using the button below — we’ll guide you from there.</p>
+                                                            <h5 class="h6 mt-1">Ready to get started or need help choosing a course?</h5>
+
 
                                                         </div>
-                                                        <a class='btn btn-sm btn-primary' style="font-family: graphik,sans-serif; color:white !important" href='/contact'>Get Started</a>
+                                                        <a class='btn btn-sm btn-primary' style="font-family: graphik,sans-serif; color:white !important" href='/admission'>Get Started</a>
                                                     </div>
                                                 </div>
                                             </div>

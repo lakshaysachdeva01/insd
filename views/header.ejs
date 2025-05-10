@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+
+        <!DOCTYPE html>
 <html lang="en" dir="ltr">
     
-<!-- Mirrored from unistudio.co/html/lexend/main/index-2 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 19:14:12 GMT -->
+<!-- Mirrored from unistudio.co/html/lexend/main/index-4 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 19:14:15 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="icon" href="/assets/images/icon.png" type="image/x-icon">
     <meta name="description" content="Applications open for admissions at INSD Raipur! Specializing in Interior Design, Fashion Technology, UI/UX, Animation & more. Launch your creative career with industry experts.">
   
@@ -70,8 +74,56 @@
 
         <!-- include scripts -->
         <script src="/assets/js/uni-core/js/uni-core-bundle.min.js"></script>
+        <!-- preload head styles -->
+        <link rel="preload" href="../assets/css/unicons.min.css" as="style">
+        <link rel="preload" href="../assets/css/swiper-bundle.min.css" as="style">
+        <link rel="preload" href="../assets/css/magic-cursor.min.css" as="style">
+
+        <!-- preload footer scripts -->
+        <link rel="preload" href="../assets/js/libs/jquery.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/scrollmagic.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/swiper-bundle.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/anime.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/typed.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/tilt.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/split-type.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/prettify.min.js" as="script">
+        <link rel="preload" href="../assets/js/libs/gsap.min.js" as="script">
+        <link rel="preload" href="../assets/js/core/magic-cursor.js" as="script">
+        <link rel="preload" href="../assets/js/helpers/data-attr-helper.js" as="script">
+        <link rel="preload" href="../assets/js/helpers/swiper-helper.js" as="script">
+        <link rel="preload" href="../assets/js/helpers/splitype-helper.js" as="script">
+        <link rel="preload" href="../assets/js/helpers/anime-helper.js" as="script">
+        <link rel="preload" href="../assets/js/helpers/typed-helper.js" as="script">
+        <link rel="preload" href="../assets/js/helpers/tilt-helper.js" as="script">
+        <link rel="preload" href="../assets/js/core/marquee.js" as="script">
+        <link rel="preload" href="../assets/js/uikit-components-bs.js" as="script">
+        <link rel="preload" href="../assets/js/form.js" as="script">
+        <link rel="preload" href="../assets/js/app.js" as="script">
+
+        <!-- app head for bootstrap core -->
+        <script src="../assets/js/app-head-bs.js"></script>
+
+        <!-- include uni-core components -->
+        <link rel="stylesheet" href="../assets/js/uni-core/css/uni-core.min.css">
+
+        <!-- include styles -->
+        <link rel="stylesheet" href="../assets/css/unicons.min.css">
+        <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="../assets/css/prettify.min.css">
+        <link rel="stylesheet" href="../assets/css/magic-cursor.min.css">
+
+        <!-- include main style -->
+        <link rel="stylesheet" href="../assets/css/theme/main.min.purge.css">
+
+        <!-- include scripts -->
+        <script src="../assets/js/uni-core/js/uni-core-bundle.min.js"></script>
     </head>
     <body class="uni-body panel bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 overflow-x-hidden disable-cursor">
+
+       
+        <!--  Cart panel -->
+       
         <style>
             /* Initial navbar background color */
             .uc-navbar-container {
@@ -79,6 +131,9 @@
                 transition: background-color 0.3s ease;
             }
             
+            .w-900px{
+                width: 900px;
+            }
             /* Sticky navbar styles: white background and black links */
             .uc-navbar-sticky .uc-navbar-container {
                 background-color: #ffffff !important;
@@ -99,31 +154,140 @@
             <header class="uc-header header-default uc-navbar-sticky-wrap z-999" style="--uc-nav-height: 80px;" data-uc-sticky="start: 100vh; show-on-up: true; animation: uc-animation-slide-top; sel-target: .uc-navbar-container; cls-active: uc-navbar-sticky; cls-inactive: uc-navbar-transparent; end: !*;">
                 <nav class="uc-navbar-container ft-tertiary z-1" data-anime="translateY: [-40, 0]; opacity: [0, 1]; easing: easeOutExpo; duration: 750; delay: 0;">
                     <div class="container max-w-xl">
-                        <div class="uc-navbar min-h-64px lg:min-h-80px text-white" data-uc-navbar="mode: click; animation: uc-animation-slide-top-small; duration: 150;">
-                            <div class="uc-navbar-left" style="width: 90%;">
+                        <div class="uc-navbar min-h-64px lg:min-h-80px text-white" data-uc-navbar="mode: hover; animation: uc-animation-slide-top-small; duration: 150;">
+                            <div class="uc-navbar-left" style="width: 85%;">
                                 <div class="uc-logo text-dark dark:text-white">
                                     <a class='panel text-none' href='/' style='width: 180px'>
                                         <img class="dark:d-none logo-img" src="/assets/images/logo.png" alt="INSD logo" data-sticky-src="/assets/images/logo-red.png" data-default-src="/assets/images/logo.png">
                                     </a>
                                 </div>
+                            <ul style="width:70%; justify-content:center" class="uc-navbar-nav gap-3 xl:gap-4 d-none lg:d-flex fw-medium ltr:ms-2 ltr:xl:ms-4 rtl:me-2 rtl:xl:me-4">
+                                <li><a href='/about'>About</a></li>
+                                <li>
+                                    <a href="/courses">Courses <span data-uc-navbar-parent-icon></span></a>
+                                    <div class="uc-navbar-dropdown w-900px ft-primary text-unset fs-6 fw-normal p-0 hide-scrollbar rounded-2 overflow-hidden" data-uc-drop="mode: hover; offset: 0; boundary: !.uc-navbar; animation: uc-animation-slide-top-small; duration: 150;">
+                                        <div class="row child-cols-4 g-0 col-match" data-uc-grid>
+                                            <div>
+                                                <ul style="padding-right: 0 !important;" class="uc-nav uc-navbar-dropdown-nav p-2">
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/interior-designing'>
+                                                            <img class="iconmenu" src="/assets/images/interior.png" alt="interiordesigning">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Interior Designing</b>
+                                                                <span class="fw-normal">Design inspiring interiors with function, style, and visual balance.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/graphic-designing'>
+                                                            <img  class="iconmenu" src="/assets/images/graphic.png" alt="graphicdesigning">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Graphic Designing</b>
+                                                                <span class="fw-normal">Craft brand visuals using modern tools and creative design principles.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/event-management'>
+                                                            <img  class="iconmenu" src="/assets/images/event.png" alt="eventmanagement">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Event Management</b>
+                                                                <span class="fw-normal">Plan, organize, and execute memorable events across various industries.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/digital-marketing'>
+                                                            <img  class="iconmenu" src="/assets/images/digital.png" alt="digitalmarketing">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Digital Marketing</b>
+                                                                <span class="fw-normal">Promote brands online through SEO, social media, and ad strategies.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul style="padding-left: 0 !important;" class="uc-nav uc-navbar-dropdown-nav p-2">
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/fashion-designing'>
+                                                            <img  class="iconmenu" src="/assets/images/fashion.png" alt="fashiondesigning">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Fashion Designing</b>
+                                                                <span class="fw-normal">Create bold fashion statements through design, styling, and trends.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/photography'>
+                                                            <img  class="iconmenu" src="/assets/images/photography.png" alt="photography">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Photography</b>
+                                                                <span class="fw-normal">Master composition, lighting, and storytelling through the art of photography.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/uiux-designing'>
+                                                            <img  class="iconmenu" src="/assets/images/ui.png" alt="graphicdesigning">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">UI/UX</b>
+                                                                <span class="fw-normal">Design intuitive, user-friendly digital experiences and interactive interfaces.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class='hstack items-start gap-2 p-2 hover:bg-gray-600 hover:bg-opacity-5 dark:hover:bg-white duration-150 rounded-1-5' href='/animation-designing'>
+                                                            <img  class="iconmenu" src="/assets/images/animation.png" alt="graphicdesigning">
+                                                            <span class="vstack gap-narrow mt-nnarrow">
+                                                                <b class="fw-bold dark:text-white">Animation Designing</b>
+                                                                <span class="fw-normal">Animate stories with motion graphics, 2D/3D design, and VFX.</span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <div class="vstack gap-2 p-3 h-100 bg-gray-25 dark:bg-gray-300 dark:bg-opacity-5">
+                                                    <div class="featured-image panel" data-uc-lightbox="video-autoplay: true;">
+                                                        <video style="height: 100%;
+                                                        max-height:300px;
+                                         border-radius:10px !important;
+                                        box-shadow: 0px 4px 10px #00000036;
+    object-fit: cover;" autoplay loop muted playsinline class="w-100 h-auto object-cover rounded">
+                                            <source src="/assets/images/ddvideo.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                          </video>
+                                                    </div>
+                                                    <div class="vstack justify-between gap-2">
+                                                        <div class="vstack gap-1">
+                                                            <h5 class="h6 m-0">Ready to get started or need help choosing a course?</h5>
+<p class="fs-7 opacity-70">Fill out the admission form using the button below — we’ll guide you from there.</p>
+
+                                                        </div>
+                                                        <a class='btn btn-sm btn-primary' style="font-family: graphik,sans-serif; color:white !important" href='/contact'>Get Started</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href='/blogs'>Insights</a></li>
+                                <li><a href='/gallery'>Glimpses</a></li>
+                                <li><a href='/contact'>Contact</a></li>
                                 
-                                <ul style="width: 80%; justify-content:center" class="uc-navbar-nav gap-3 xl:gap-4 d-none lg:d-flex fw-medium ms-2">
-                                    <li><a href='/about'>About</a></li>
-                                    <li><a href='/courses'>Courses</a></li>
-                                    <li><a href='/gallery'>Glimpses</a></li>
-                                    <li><a href='/blogs'>Insights</a></li>
-                                    <li><a href='/contact'>Contact</a></li>
-                                </ul>
-                            </div>
-                            <div class="uc-navbar-right">
-                                <a class='btn btn-sm btn-primary text-white text-none d-none lg:d-inline-flex' style="font-family: 'graphik',sans-serif;" href='/admission'>Get started</a>
-                            </div>
+                            </ul>
+                        </div>
+                        <div class="uc-navbar-right">
+                           
+                            <a style="font-family: graphik,sans-serif;" class='btn btn-sm btn-primary rounded-default text-white text-none d-none lg:d-inline-flex' href='/admission'>Admission Now</a>
+                            <a class="d-block lg:d-none" href="#uc-menu-panel" data-uc-navbar-toggle-icon data-uc-toggle></a>
                         </div>
                     </div>
-                </nav>
-            </header>
-            
-            <script>
+                </div>
+            </nav>
+        </header>
+        <script>
             // JavaScript to toggle logo based on sticky state
             document.addEventListener('DOMContentLoaded', function () {
                 const navbar = document.querySelector('.uc-navbar-container');

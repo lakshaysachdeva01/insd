@@ -1,7 +1,7 @@
 
         <!-- Footer start -->
         <footer id="uc-footer" class="uc-footer panel overflow-hidden">
-          <div class="footer-outer py-4 lg:py-6 xl:py-9 dark:bg-gray-900 dark:text-white">
+          <div class="footer-outer py-4 lg:py-6 xl:py-9  bg-dark text-white">
               <div class="container max-w-xl">
                   <div class="footer-inner vstack gap-4 lg:gap-6 xl:gap-8">
                       <div class="uc-footer-widgets panel">
@@ -49,12 +49,12 @@
                                     </li>
                                     <li>
                                         <div class="icon-wrapper"><i class="fas fa-phone"></i></div>
-                                        <div style="display: flex; flex-direction:column"> <a href="tel:8871679000">8871679000</a> <a href="tel:6266048246">6266048246</a> <a href="tel:8602358000">8602358000</a></div>
+                                        <div style="display: flex; flex-wrap:wrap"> <a href="tel:8871679000">+91 8871679000</a> , <a href="tel:6266048246">+91 6266048246</a> , <a href="tel:8602358000">+91 8602358000</a></div>
                                         
                                     </li>
                                     <li>
                                         <div class="icon-wrapper"><i class="fas fa-envelope"></i></div>
-                                        <div style="display: flex; flex-direction:column"> <a href="mailto:info@insdraipur.com">info@insdraipur.com</a> <a href="mailto:insd0123@gmail.com">insd0123@gmail.com</a></div>
+                                        <div style="display: flex; flex-direction:column; align-items:baseline"><a href="mailto:info@insdraipur.com">info@insdraipur.com</a><a href="mailto:insd0123@gmail.com">insd0123@gmail.com</a></div>
                                         
                                     </li>
 
@@ -100,8 +100,9 @@
     .icon-wrapper{
         align-self: flex-start;
         height: 40px;
-        width: 40px;
-        border: 1px solid rgba(0, 0, 0, 0.715);
+        min-width: 40px;
+        max-width: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.215);
         border-radius: 50%;
         margin-right: 10px;
     }
@@ -115,6 +116,9 @@
         justify-content: center;
         align-items: center;
         font-size: 18px;
+    }
+    p,span,a{
+        font-family: "graphik",sans-serif;
     }
 </style>
       <!-- Footer end -->

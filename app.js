@@ -87,6 +87,128 @@ app.get('/our-curriculum', async (req, res) => {
 });
 
 
+app.get('/courses', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('courses', { body: "", baseUrl, seoDetails });
+});
+
+app.get('/fashion-designing', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('fashiondesigning', { body: "", baseUrl, seoDetails });
+});
+
+app.get('/interior-designing', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('interior', { body: "", baseUrl, seoDetails });
+});
+
+
+app.get('/graphic-designing', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('graphic', { body: "", baseUrl, seoDetails });
+});
+
+app.get('/photography', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('photography', { body: "", baseUrl, seoDetails });
+});
+
+app.get('/digital-marketing', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('digital', { body: "", baseUrl, seoDetails });
+});
+
+
+app.get('/uiux-designing', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('uiux', { body: "", baseUrl, seoDetails });
+});
+
+app.get('/event-management', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('event', { body: "", baseUrl, seoDetails });
+});
+
+
+
+app.get('/animation-designing', async (req, res) => {
+    const baseUrl = req.protocol + '://' + req.get('Host');
+    const seoDetails = {
+        title: "Our Curriculum | Alphabetz Preschool Dongargarh - Play-Based Learning",
+        metaDescription: "Discover the innovative curriculum at Alphabetz Preschool Dongargarh, designed to nurture creativity, cognitive skills, and social growth through play-based learning.",
+        metaImage: `${baseUrl}/${metaLogoPath}`,
+        keywords: "Preschool curriculum, Best curriculum for kids, Play-based learning, Early childhood education, Learning through play, Kindergarten syllabus, Montessori approach",
+        canonical: `${baseUrl}/our-curriculum`,
+    }; 
+   
+    res.render('animation', { body: "", baseUrl, seoDetails });
+});
+
+
 app.get('/a-day-at-alphabetz', async (req, res) => {
     const baseUrl = req.protocol + '://' + req.get('Host');
     const seoDetails = {

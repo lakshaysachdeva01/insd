@@ -3675,6 +3675,16 @@ progress {
     max-width: 1320px;
   }
 }
+
+.uc-switcher .row > * {
+    flex-shrink: 0;
+  
+    padding-right: calc(var(--bs-gutter-x) * 0.2);
+    padding-left: calc(var(--bs-gutter-x) * 0.2);
+    margin-top: var(--bs-gutter-y);
+  
+}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -8821,6 +8831,14 @@ textarea.form-control-lg {
 .uc-navbar-nav li a:hover{
   color: #ac3948 !important;
 }
+
+.uc-navbar-dropdown li{
+  margin-bottom: 10px;
+}
+
+.uc-navbar-dropdown li a:hover{
+  color: black !important;
+}
 span{
   font-family: 'graphik',sans-serif !important;
 }
@@ -8837,4 +8855,42 @@ ul li{
 
 .swiper-pagination-bullet-active{
   background: #ac3948 !important;
+}
+
+
+/* For WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.bg-dark{
+  background-color: #19182c !important;
+}
+
+
+.iconmenu{
+  height: 30px;
+  width: 30px;
+}
+
+
+.sectioncoursed{
+  display: flex;
+}
+
+
+.width-25p{
+  width: 25%;
+}
+.width-25p .tier i{
+  color:#d6a27d !important;
+}
+.width-25p .tier{
+  height: 100%;
+  padding: 12px;
+}
+
+.feature-item .uc-link:hover{
+  color: #ac3948 ;
 }

@@ -2,158 +2,49 @@
 
 <body>
   <div class="error-page">
-    <!-- Animated SVG Background -->
-    <div class="svg-background">
-      <!-- Abstract shapes -->
-      <svg class="bg-shape shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M42.7,-73.4C55.9,-67.3,67.7,-57.2,75.9,-44.5C84.1,-31.8,88.7,-15.9,88.2,-0.3C87.7,15.3,82.1,30.6,73.6,44.2C65.1,57.8,53.6,69.7,40,75.8C26.3,81.9,10.7,82.2,-4.4,79.1C-19.5,76,-39,69.5,-53.1,58.8C-67.2,48.1,-75.9,33.2,-79.5,17.1C-83.1,1,-81.6,-16.3,-75.2,-31.2C-68.8,-46.1,-57.5,-58.6,-44.3,-64.7C-31.1,-70.8,-15.5,-70.5,-0.2,-70.1C15.2,-69.8,29.5,-79.5,42.7,-73.4Z" transform="translate(100 100)" />
-      </svg>
-      
-      <svg class="bg-shape shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M38.5,-65.3C50.2,-60.1,60.4,-49.9,68.2,-37.8C76,-25.7,81.5,-12.9,81.2,-0.2C80.9,12.5,74.9,24.9,67.1,36.1C59.3,47.3,49.8,57.2,38.5,64.6C27.2,72,13.6,76.9,0.2,76.6C-13.3,76.3,-26.5,70.8,-38.7,63.4C-50.9,56,-62,46.7,-69.2,34.8C-76.4,22.9,-79.7,8.5,-78.3,-5.2C-76.9,-18.9,-70.8,-32,-62.1,-43.1C-53.4,-54.3,-42.1,-63.5,-30,-66.9C-17.9,-70.3,-5,-67.9,6.9,-65.8C18.8,-63.7,26.8,-70.5,38.5,-65.3Z" transform="translate(100 100)" />
-      </svg>
+    <!-- Simple background elements -->
+    <div class="background-elements">
+      <div class="star star-1"></div>
+      <div class="star star-2"></div>
+      <div class="star star-3"></div>
+      <div class="star star-4"></div>
+      <div class="star star-5"></div>
+      <div class="star star-6"></div>
     </div>
 
     <!-- Main content container -->
     <div class="content-container">
       <div class="error-content">
-        <!-- Left side with text -->
-        <div class="text-section">
-          <h1 class="error-code">404</h1>
-          <p class="error-message">Oops! The page you're looking for seems to have wandered off.</p>
-          <p class="error-description">Don't worry, even the best designs sometimes get lost. Let's get you back on track.</p>
-          <a href="/" class="home-button">
-            <span>Back to Home</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
+        <!-- 404 Text -->
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
         
-        <!-- Right side with animated SVG illustration -->
-        <div class="illustration-section">
-          <!-- Animated 404 Illustration -->
-          <div class="svg-illustration">
-            <!-- Magnifying glass searching -->
-            <svg class="magnifying-glass" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle class="glass" cx="80" cy="80" r="40" stroke="#1A9C78" stroke-width="8" fill="none"/>
-              <line class="handle" x1="110" y1="110" x2="150" y2="150" stroke="#1A9C78" stroke-width="8" stroke-linecap="round"/>
-              <circle class="reflection" cx="65" cy="65" r="10" fill="white" fill-opacity="0.3"/>
-            </svg>
-            
-            <!-- Missing page -->
-            <svg class="missing-page" width="120" height="160" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect class="page" x="10" y="10" width="100" height="140" rx="5" fill="white" stroke="#1A9C78" stroke-width="3"/>
-              <line class="page-line" x1="30" y1="40" x2="90" y2="40" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
-              <line class="page-line" x1="30" y1="60" x2="90" y2="60" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
-              <line class="page-line" x1="30" y1="80" x2="70" y2="80" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
-              <path class="question-mark" d="M60 110C60 110 70 110 70 100C70 90 60 90 60 90C50 90 50 100 50 100" stroke="#d30303" stroke-width="4" stroke-linecap="round"/>
-              <circle class="question-dot" cx="60" cy="120" r="3" fill="#d30303"/>
-            </svg>
-            
-            <!-- Compass -->
-            <svg class="compass" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle class="compass-circle" cx="60" cy="60" r="50" stroke="#1A9C78" stroke-width="3" fill="white"/>
-              <path class="compass-needle" d="M60 20L70 60L60 100L50 60L60 20Z" fill="#d30303"/>
-              <circle class="compass-center" cx="60" cy="60" r="5" fill="#1A9C78"/>
-              <text x="57" y="30" fill="#1A9C78" font-size="10" font-weight="bold">N</text>
-              <text x="57" y="95" fill="#1A9C78" font-size="10" font-weight="bold">S</text>
-              <text x="90" y="63" fill="#1A9C78" font-size="10" font-weight="bold">E</text>
-              <text x="25" y="63" fill="#1A9C78" font-size="10" font-weight="bold">W</text>
-            </svg>
-            
-            <!-- Map with X marks the spot -->
-            <svg class="map" width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="map-outline" d="M10 10L40 20L80 10L120 25L150 15V100L120 110L80 95L40 105L10 90V10Z" fill="#F9F6F2" stroke="#1A9C78" stroke-width="3"/>
-              <path class="map-fold" d="M40 20V105" stroke="#1A9C78" stroke-width="2" stroke-dasharray="5 5"/>
-              <path class="map-fold" d="M80 10V95" stroke="#1A9C78" stroke-width="2" stroke-dasharray="5 5"/>
-              <path class="map-fold" d="M120 25V110" stroke="#1A9C78" stroke-width="2" stroke-dasharray="5 5"/>
-              <path class="x-mark" d="M70 50L90 70M90 50L70 70" stroke="#d30303" stroke-width="4" stroke-linecap="round"/>
-              <circle class="x-circle" cx="80" cy="60" r="25" stroke="#d30303" stroke-width="3" stroke-dasharray="5 5" fill="none"/>
-            </svg>
-          </div>
-        </div>
+        <!-- Simple button -->
+        <a href="/" class="home-button bg-primary">
+          <span>Back to Home</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
-    </div>
-
-    <!-- Floating elements -->
-    <div class="floating-elements">
-      <!-- Code brackets -->
-      <svg class="floating-element brackets" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 10L10 30L20 50" stroke="#1A9C78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M40 10L50 30L40 50" stroke="#1A9C78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      
-      <!-- Broken link -->
-      <svg class="floating-element broken-link" width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 20H5C5 20 5 10 15 10C25 10 25 20 25 20H35" stroke="#d30303" stroke-width="3" stroke-linecap="round"/>
-        <path d="M60 20H45C45 20 45 30 55 30C65 30 65 20 65 20H75" stroke="#d30303" stroke-width="3" stroke-linecap="round"/>
-      </svg>
-      
-      <!-- Error symbol -->
-      <svg class="floating-element error-symbol" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="25" cy="25" r="20" stroke="#d30303" stroke-width="3" fill="none"/>
-        <path d="M15 15L35 35M35 15L15 35" stroke="#d30303" stroke-width="3" stroke-linecap="round"/>
-      </svg>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Animate SVG elements
-      const svgElements = document.querySelectorAll('.svg-illustration > svg');
-      svgElements.forEach((svg, index) => {
-        setTimeout(() => {
-          svg.classList.add('animate');
-        }, index * 200);
+      // Simple fade-in animation for content
+      const content = document.querySelector('.error-content');
+      setTimeout(() => {
+        content.classList.add('visible');
+      }, 100);
+      
+      // Animate stars with random delays
+      const stars = document.querySelectorAll('.star');
+      stars.forEach(star => {
+        const delay = Math.random() * 3;
+        star.style.animationDelay = `${delay}s`;
       });
-      
-      // Animate floating elements
-      const floatingElements = document.querySelectorAll('.floating-element');
-      floatingElements.forEach((element, index) => {
-        setTimeout(() => {
-          element.classList.add('animate');
-        }, 500 + index * 150);
-      });
-      
-      // Animate compass needle
-      setInterval(() => {
-        const needle = document.querySelector('.compass-needle');
-        needle.classList.add('spin');
-        
-        setTimeout(() => {
-          needle.classList.remove('spin');
-        }, 1000);
-      }, 3000);
-      
-      // Animate magnifying glass
-      const glass = document.querySelector('.magnifying-glass');
-      let direction = 1;
-      let position = 0;
-      
-      setInterval(() => {
-        position += direction * 2;
-        
-        if (position > 20 || position < 0) {
-          direction *= -1;
-        }
-        
-        glass.style.transform = `translateX(${position}px)`;
-      }, 50);
-      
-      // Animate question mark
-      const questionMark = document.querySelector('.question-mark');
-      const questionDot = document.querySelector('.question-dot');
-      
-      setInterval(() => {
-        questionMark.classList.add('pulse');
-        questionDot.classList.add('pulse');
-        
-        setTimeout(() => {
-          questionMark.classList.remove('pulse');
-          questionDot.classList.remove('pulse');
-        }, 1000);
-      }, 2000);
     });
   </script>
 
@@ -166,9 +57,9 @@
     }
     
     body {
-      font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f9f6f2;
-      color: #333;
+      font-family: "graphik",sans-serif;
+      background-color: #19182c; /* Exact background color requested */
+      color: #FFFFFF;
       overflow-x: hidden;
       min-height: 100vh;
     }
@@ -177,133 +68,138 @@
     .error-page {
       position: relative;
       width: 100%;
-      min-height: 100vh;
+      min-height: 89vh;
+      background-color: #19182c;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
     }
     
-    /* Background shapes */
-    .svg-background {
+    /* Simple background elements */
+    .background-elements {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 0;
     }
     
-    .bg-shape {
+    .star {
       position: absolute;
-      opacity: 0.05;
+      width: 2px;
+      height: 2px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: twinkle 3s infinite;
     }
     
-    .shape-1 {
-      top: -20%;
-      right: -10%;
-      width: 60vw;
-      height: 60vw;
-      fill: #1A9C78;
-      animation: float 15s ease-in-out infinite;
+    .star-1 {
+      top: 20%;
+      left: 15%;
     }
     
-    .shape-2 {
-      bottom: -20%;
-      left: -10%;
-      width: 60vw;
-      height: 60vw;
-      fill: #1A9C78;
-      animation: float 18s ease-in-out infinite reverse;
+    .star-2 {
+      top: 30%;
+      right: 20%;
     }
     
-    @keyframes float {
+    .star-3 {
+      bottom: 25%;
+      left: 30%;
+    }
+    
+    .star-4 {
+      top: 15%;
+      right: 35%;
+    }
+    
+    .star-5 {
+      bottom: 40%;
+      right: 25%;
+    }
+    
+    .star-6 {
+      bottom: 15%;
+      left: 20%;
+    }
+    
+    @keyframes twinkle {
       0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      25% {
-        transform: translate(2%, 2%) rotate(2deg);
+        opacity: 0.2;
+        transform: scale(1);
       }
       50% {
-        transform: translate(0, 4%) rotate(0deg);
-      }
-      75% {
-        transform: translate(-2%, 2%) rotate(-2deg);
+        opacity: 0.7;
+        transform: scale(1.5);
       }
     }
     
     /* Content container */
     .content-container {
-      width: 100%;
-      max-width: 1250px;
-      margin: 0 auto;
-      padding: 20px;
+      position: relative;
       z-index: 1;
+      width: 100%;
+      max-width: 600px;
+      padding: 0 20px;
     }
     
     .error-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
     }
     
-    /* Text section */
-    .text-section {
-      flex: 1;
-      padding: 20px;
-      min-width: 300px;
+    .error-content.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
+    /* Text styles */
     .error-code {
       font-size: 120px;
       font-weight: 700;
-      color: #d30303;
-      margin-bottom: 20px;
+      color: #FFFFFF;
+      margin-bottom: 10px;
       line-height: 1;
-      animation: pulse 2s ease-in-out infinite;
     }
     
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
+    .error-title {
+      font-size: 32px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 20px;
     }
     
     .error-message {
-      font-size: 24px;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 15px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
     }
     
-    .error-description {
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 30px;
-      max-width: 500px;
-    }
-    
+    /* Button style */
     .home-button {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 14px 28px;
-      background-color: #1A9C78;
+     
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 4px;
       font-weight: 500;
       font-size: 16px;
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .home-button:hover {
-      background-color: #158463;
+     color: white;
       transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     
     .home-button svg {
@@ -314,237 +210,37 @@
       transform: translateX(-5px);
     }
     
-    /* Illustration section */
-    .illustration-section {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    
-    .svg-illustration {
-      position: relative;
-      width: 100%;
-      height: 400px;
-    }
-    
-    /* SVG animations */
-    .svg-illustration > svg {
-      position: absolute;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .svg-illustration > svg.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .magnifying-glass {
-      top: 10%;
-      left: 10%;
-      transition: transform 0.2s ease-in-out;
-    }
-    
-    .missing-page {
-      top: 30%;
-      left: 40%;
-      z-index: 2;
-    }
-    
-    .compass {
-      bottom: 10%;
-      right: 10%;
-    }
-    
-    .map {
-      bottom: 20%;
-      left: 5%;
-      z-index: 1;
-    }
-    
-    /* SVG element animations */
-    .page-line {
-      stroke-dasharray: 60;
-      stroke-dashoffset: 60;
-      animation: draw 1s forwards;
-      animation-delay: 0.5s;
-    }
-    
-    @keyframes draw {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-    
-    .question-mark, .question-dot {
-      opacity: 0.8;
-      transition: all 0.3s ease;
-    }
-    
-    .question-mark.pulse, .question-dot.pulse {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-    
-    .compass-needle {
-      transform-origin: center;
-      transition: transform 1s ease-in-out;
-    }
-    
-    .compass-needle.spin {
-      transform: rotate(360deg);
-    }
-    
-    .x-mark {
-      stroke-dasharray: 30;
-      stroke-dashoffset: 30;
-      animation: draw 1s forwards;
-      animation-delay: 1s;
-    }
-    
-    .x-circle {
-      stroke-dasharray: 160;
-      stroke-dashoffset: 160;
-      animation: draw 2s forwards;
-      animation-delay: 1.5s;
-    }
-    
-    /* Floating elements */
-    .floating-elements {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    .floating-element {
-      position: absolute;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .floating-element.animate {
-      opacity: 0.6;
-      transform: translateY(0);
-      animation: float-element 5s ease-in-out infinite;
-    }
-    
-    @keyframes float-element {
-      0%, 100% {
-        transform: translate(0, 0);
-      }
-      50% {
-        transform: translate(0, -15px);
-      }
-    }
-    
-    .brackets {
-      top: 15%;
-      left: 15%;
-    }
-    
-    .broken-link {
-      bottom: 20%;
-      right: 15%;
-    }
-    
-    .error-symbol {
-      top: 20%;
-      right: 20%;
-    }
-    
     /* Responsive styles */
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
       .error-code {
         font-size: 100px;
       }
       
-      .error-message {
-        font-size: 22px;
-      }
-      
-      .svg-illustration {
-        height: 350px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .error-content {
-        flex-direction: column;
-      }
-      
-      .text-section {
-        order: 1;
-        text-align: center;
-      }
-      
-      .illustration-section {
-        order: 0;
-        margin-bottom: 20px;
-      }
-      
-      .error-code {
-        font-size: 80px;
+      .error-title {
+        font-size: 28px;
       }
       
       .error-message {
-        font-size: 20px;
-      }
-      
-      .error-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      .svg-illustration {
-        height: 300px;
-      }
-      
-      .floating-element {
-        transform: scale(0.8);
+        font-size: 16px;
       }
     }
     
     @media (max-width: 480px) {
       .error-code {
-        font-size: 70px;
+        font-size: 80px;
+      }
+      
+      .error-title {
+        font-size: 24px;
       }
       
       .error-message {
-        font-size: 18px;
-      }
-      
-      .error-description {
-        font-size: 14px;
+        font-size: 15px;
       }
       
       .home-button {
         padding: 12px 24px;
-        font-size: 14px;
-      }
-      
-      .svg-illustration {
-        height: 250px;
-      }
-      
-      .magnifying-glass, .compass {
-        transform: scale(0.8);
-      }
-      
-      .missing-page, .map {
-        transform: scale(0.7);
-      }
-      
-      .floating-element {
-        transform: scale(0.6);
+        font-size: 15px;
       }
     }
   </style>
